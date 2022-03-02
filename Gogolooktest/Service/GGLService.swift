@@ -11,10 +11,10 @@ import Moya
 // Server API
 enum GGLService {
     // 取得 Anime 資訊
-    case showAnimes
+    case showAnimes(page: Int?=nil, subtype: String?=nil)
     
     // 取得 Manga 資訊
-    case showMangas
+    case showMangas(page: Int?=nil, subtype: String?=nil)
 }
 
 // MARK: - TargetType Protocol Implementation
@@ -23,14 +23,31 @@ extension GGLService: TargetType {
     var baseURL: URL { URL(string: "https://api.jikan.moe/v3/top")! }
     
     var path: String {
+        var path = ""
+        
         switch self {
             // 取得 Anime 資訊 API
-        case .showAnimes:
-            return "/anime"
+        case .showAnimes(let page, let subtype):
+            path += "/anime"
+            if let page = page {
+                path += "/\(page)"
+            }
+            if let subtype = subtype {
+                path += "\(page == nil ? "/1" : "")/\(subtype)"
+            }
+            
             // 取得 Manga 資訊 API
-        case .showMangas:
-            return "/manga"
+        case .showMangas(let page, let subtype):
+            path += "/manga"
+            if let page = page {
+                path += "/\(page)"
+            }
+            if let subtype = subtype {
+                path += "\(page == nil ? "/1" : "")/\(subtype)"
+            }
         }
+        print("request path:\(path)")
+        return path
     }
     
     // request 方法

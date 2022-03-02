@@ -26,7 +26,7 @@ struct AnimeInfo: Decodable {
     let url: String
     let image_url: String
     let type: String
-    let episodes: Int
+    let episodes: Int?
     let start_date: String
     let end_date: String?
     let members: Int

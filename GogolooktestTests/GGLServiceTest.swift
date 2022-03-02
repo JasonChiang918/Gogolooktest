@@ -28,7 +28,7 @@ class GGLServiceTest: XCTestCase {
         var responseError: Error?
         let promise = expectation(description: "No anime.")
         
-        animeService.fetchAnimesAPI { error, anime in
+        animeService.fetchAnimesAPI(page: 1, subtype: "tv") { error, anime in
             if let error = error {
                 responseError = error
             }
@@ -45,7 +45,7 @@ class GGLServiceTest: XCTestCase {
         var responseError: Error?
         let promise = expectation(description: "No manga.")
         
-        mangaService.fetchMangasAPI { error, manga in
+        mangaService.fetchMangasAPI(page: 1, subtype: "manga") { error, manga in
             if let error = error {
                 responseError = error
             }

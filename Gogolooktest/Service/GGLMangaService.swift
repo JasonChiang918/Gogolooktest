@@ -14,7 +14,7 @@ typealias MangaCompletionHandler = (_ error: Error?, _ responseData: Manga?) -> 
 // 取得 Manga 資訊協定
 protocol MangaServiceProtocol {
     // server API
-    func fetchMangasAPI(completionHandler: @escaping MangaCompletionHandler) -> Void
+    func fetchMangasAPI(page: Int?, subtype: String?, completionHandler: @escaping MangaCompletionHandler) -> Void
 }
 
 class GGLMangaService: MangaServiceProtocol {
@@ -23,14 +23,14 @@ class GGLMangaService: MangaServiceProtocol {
     let provider = MoyaProvider<GGLService>()
     
     // server API
-    func fetchMangasAPI(completionHandler: @escaping MangaCompletionHandler) -> Void {
-        self.provider.request(.showMangas) { result in
+    func fetchMangasAPI(page: Int?=nil, subtype: String?=nil, completionHandler: @escaping MangaCompletionHandler) -> Void {
+        self.provider.request(.showMangas(page: page, subtype: subtype)) { result in
             switch result {
             case let .success(moyaResponse):
                 do {
                     let data = try moyaResponse.map(Manga.self)
                     let statusCode = moyaResponse.statusCode
-                    print("statusCode:\(statusCode)")
+                    print("statusCode:\(statusCode) data:\(data)")
                     completionHandler(nil, data)
                 }
                 catch {

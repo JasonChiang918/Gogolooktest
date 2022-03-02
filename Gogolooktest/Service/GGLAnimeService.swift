@@ -14,7 +14,7 @@ typealias AnimeCompletionHandler = (_ error: Error?, _ responseData: Anime?) -> 
 // 取得 Anime 資訊協定
 protocol AnimeServiceProtocol {
     // server API
-    func fetchAnimesAPI(completionHandler: @escaping AnimeCompletionHandler) -> Void
+    func fetchAnimesAPI(page: Int?, subtype: String?, completionHandler: @escaping AnimeCompletionHandler) -> Void
 }
 
 class GGLAnimeService: AnimeServiceProtocol {
@@ -23,14 +23,14 @@ class GGLAnimeService: AnimeServiceProtocol {
     let provider = MoyaProvider<GGLService>()
     
     // server API
-    func fetchAnimesAPI(completionHandler: @escaping AnimeCompletionHandler) -> Void {
-        self.provider.request(.showAnimes) { result in
+    func fetchAnimesAPI(page: Int?=nil, subtype: String?=nil, completionHandler: @escaping AnimeCompletionHandler) -> Void {
+        self.provider.request(.showAnimes(page: page, subtype: subtype)) { result in
             switch result {
             case let .success(moyaResponse):
                 do {
                     let data = try moyaResponse.map(Anime.self)
                     let statusCode = moyaResponse.statusCode
-                    print("statusCode:\(statusCode)")
+                    print("statusCode:\(statusCode) data:\(data)")
                     completionHandler(nil, data)
                 }
                 catch {
