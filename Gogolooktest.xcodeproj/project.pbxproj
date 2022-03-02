@@ -99,10 +99,14 @@
 		1C62E16F27CF443F00F8CEC4 /* Gogolooktest */ = {
 			isa = PBXGroup;
 			children = (
+				1C62E1A027CF44A600F8CEC4 /* Model */,
+				1C62E1A127CF44AB00F8CEC4 /* View */,
+				1C62E1A227CF44B200F8CEC4 /* ViewModel */,
+				1C62E1A327CF44B900F8CEC4 /* Service */,
+				1C62E1A427CF44BE00F8CEC4 /* Extension */,
 				1C62E17027CF443F00F8CEC4 /* AppDelegate.swift */,
 				1C62E17227CF443F00F8CEC4 /* SceneDelegate.swift */,
 				1C62E17427CF443F00F8CEC4 /* ViewController.swift */,
-				1C62E17627CF443F00F8CEC4 /* Main.storyboard */,
 				1C62E17927CF444000F8CEC4 /* Assets.xcassets */,
 				1C62E17B27CF444000F8CEC4 /* LaunchScreen.storyboard */,
 				1C62E17E27CF444000F8CEC4 /* Info.plist */,
@@ -125,6 +129,42 @@
 				1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */,
 			);
 			path = GogolooktestUITests;
+			sourceTree = "<group>";
+		};
+		1C62E1A027CF44A600F8CEC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C62E1A127CF44AB00F8CEC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C62E17627CF443F00F8CEC4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1C62E1A227CF44B200F8CEC4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1C62E1A327CF44B900F8CEC4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1C62E1A427CF44BE00F8CEC4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
