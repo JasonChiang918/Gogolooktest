@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C566A4E27CF68FE004D4E22 /* Manga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C566A4D27CF68FE004D4E22 /* Manga.swift */; };
+		1C566A4F27CF68FE004D4E22 /* Manga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C566A4D27CF68FE004D4E22 /* Manga.swift */; };
+		1C566A5127CF697E004D4E22 /* GGLMangaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C566A5027CF697E004D4E22 /* GGLMangaService.swift */; };
+		1C566A5227CF697E004D4E22 /* GGLMangaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C566A5027CF697E004D4E22 /* GGLMangaService.swift */; };
+		1C566A5D27CF6F51004D4E22 /* GGLServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C566A5C27CF6F51004D4E22 /* GGLServiceTest.swift */; };
 		1C62E17127CF443F00F8CEC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E17027CF443F00F8CEC4 /* AppDelegate.swift */; };
 		1C62E17327CF443F00F8CEC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E17227CF443F00F8CEC4 /* SceneDelegate.swift */; };
 		1C62E17527CF443F00F8CEC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E17427CF443F00F8CEC4 /* ViewController.swift */; };
 		1C62E17827CF443F00F8CEC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C62E17627CF443F00F8CEC4 /* Main.storyboard */; };
 		1C62E17A27CF444000F8CEC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C62E17927CF444000F8CEC4 /* Assets.xcassets */; };
 		1C62E17D27CF444000F8CEC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C62E17B27CF444000F8CEC4 /* LaunchScreen.storyboard */; };
-		1C62E18827CF444000F8CEC4 /* GogolooktestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E18727CF444000F8CEC4 /* GogolooktestTests.swift */; };
 		1C62E19227CF444000F8CEC4 /* GogolooktestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */; };
 		1C62E19427CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */; };
+		1CFC15EE27CF50C2000B0CE0 /* GGLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */; };
+		1CFC15EF27CF50C2000B0CE0 /* GGLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */; };
+		1CFC15F127CF5233000B0CE0 /* GGLAnimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15F027CF5233000B0CE0 /* GGLAnimeService.swift */; };
+		1CFC15F227CF5233000B0CE0 /* GGLAnimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15F027CF5233000B0CE0 /* GGLAnimeService.swift */; };
+		1CFC15F427CF55FD000B0CE0 /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15F327CF55FD000B0CE0 /* Anime.swift */; };
+		1CFC15F527CF55FD000B0CE0 /* Anime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15F327CF55FD000B0CE0 /* Anime.swift */; };
 		53871DCEC471DBC0B01D5B3A /* Pods_GogolooktestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB35DC45BB7534E35174509 /* Pods_GogolooktestTests.framework */; };
 		B09D2E2067230403942C1E47 /* Pods_Gogolooktest_GogolooktestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31467256FB828BC7FA4612B /* Pods_Gogolooktest_GogolooktestUITests.framework */; };
 		C7650010AC6AEAB7F8034561 /* Pods_Gogolooktest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26216E1265FD5798EEEC37C7 /* Pods_Gogolooktest.framework */; };
@@ -39,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C566A4D27CF68FE004D4E22 /* Manga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manga.swift; sourceTree = "<group>"; };
+		1C566A5027CF697E004D4E22 /* GGLMangaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLMangaService.swift; sourceTree = "<group>"; };
+		1C566A5C27CF6F51004D4E22 /* GGLServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLServiceTest.swift; sourceTree = "<group>"; };
 		1C62E16D27CF443F00F8CEC4 /* Gogolooktest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gogolooktest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C62E17027CF443F00F8CEC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C62E17227CF443F00F8CEC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,10 +61,12 @@
 		1C62E17C27CF444000F8CEC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C62E17E27CF444000F8CEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C62E18327CF444000F8CEC4 /* GogolooktestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogolooktestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C62E18727CF444000F8CEC4 /* GogolooktestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestTests.swift; sourceTree = "<group>"; };
 		1C62E18D27CF444000F8CEC4 /* GogolooktestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogolooktestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestUITests.swift; sourceTree = "<group>"; };
 		1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLService.swift; sourceTree = "<group>"; };
+		1CFC15F027CF5233000B0CE0 /* GGLAnimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLAnimeService.swift; sourceTree = "<group>"; };
+		1CFC15F327CF55FD000B0CE0 /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
 		26216E1265FD5798EEEC37C7 /* Pods_Gogolooktest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gogolooktest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		579CA6F8A92CA8731EBA62D4 /* Pods-Gogolooktest-GogolooktestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gogolooktest-GogolooktestUITests.release.xcconfig"; path = "Target Support Files/Pods-Gogolooktest-GogolooktestUITests/Pods-Gogolooktest-GogolooktestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7836C3B10CD0D02AB41A6C7B /* Pods-Gogolooktest-GogolooktestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gogolooktest-GogolooktestUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gogolooktest-GogolooktestUITests/Pods-Gogolooktest-GogolooktestUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +138,6 @@
 				1C62E1A427CF44BE00F8CEC4 /* Extension */,
 				1C62E17027CF443F00F8CEC4 /* AppDelegate.swift */,
 				1C62E17227CF443F00F8CEC4 /* SceneDelegate.swift */,
-				1C62E17427CF443F00F8CEC4 /* ViewController.swift */,
 				1C62E17927CF444000F8CEC4 /* Assets.xcassets */,
 				1C62E17B27CF444000F8CEC4 /* LaunchScreen.storyboard */,
 				1C62E17E27CF444000F8CEC4 /* Info.plist */,
@@ -134,7 +148,7 @@
 		1C62E18627CF444000F8CEC4 /* GogolooktestTests */ = {
 			isa = PBXGroup;
 			children = (
-				1C62E18727CF444000F8CEC4 /* GogolooktestTests.swift */,
+				1C566A5C27CF6F51004D4E22 /* GGLServiceTest.swift */,
 			);
 			path = GogolooktestTests;
 			sourceTree = "<group>";
@@ -151,6 +165,8 @@
 		1C62E1A027CF44A600F8CEC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CFC15F327CF55FD000B0CE0 /* Anime.swift */,
+				1C566A4D27CF68FE004D4E22 /* Manga.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				1C62E17627CF443F00F8CEC4 /* Main.storyboard */,
+				1C62E17427CF443F00F8CEC4 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +190,9 @@
 		1C62E1A327CF44B900F8CEC4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */,
+				1CFC15F027CF5233000B0CE0 /* GGLAnimeService.swift */,
+				1C566A5027CF697E004D4E22 /* GGLMangaService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -204,7 +224,6 @@
 				9CC4275F8FFDACA89CD9E16A /* Pods-GogolooktestTests.debug.xcconfig */,
 				ED5DC5660FAFDA9912332C1F /* Pods-GogolooktestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -447,9 +466,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CFC15F427CF55FD000B0CE0 /* Anime.swift in Sources */,
 				1C62E17527CF443F00F8CEC4 /* ViewController.swift in Sources */,
+				1CFC15F127CF5233000B0CE0 /* GGLAnimeService.swift in Sources */,
 				1C62E17127CF443F00F8CEC4 /* AppDelegate.swift in Sources */,
+				1CFC15EE27CF50C2000B0CE0 /* GGLService.swift in Sources */,
+				1C566A4E27CF68FE004D4E22 /* Manga.swift in Sources */,
 				1C62E17327CF443F00F8CEC4 /* SceneDelegate.swift in Sources */,
+				1C566A5127CF697E004D4E22 /* GGLMangaService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +481,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C62E18827CF444000F8CEC4 /* GogolooktestTests.swift in Sources */,
+				1CFC15F527CF55FD000B0CE0 /* Anime.swift in Sources */,
+				1C566A5D27CF6F51004D4E22 /* GGLServiceTest.swift in Sources */,
+				1CFC15EF27CF50C2000B0CE0 /* GGLService.swift in Sources */,
+				1C566A4F27CF68FE004D4E22 /* Manga.swift in Sources */,
+				1C566A5227CF697E004D4E22 /* GGLMangaService.swift in Sources */,
+				1CFC15F227CF5233000B0CE0 /* GGLAnimeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
