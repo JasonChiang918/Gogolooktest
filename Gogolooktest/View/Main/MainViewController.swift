@@ -44,6 +44,7 @@ class MainViewController: UIViewController {
         // init subtype dropdown
         self.subtypeDropDown.didSelect { (selectedText, index ,id) in
             print("subtype String:\(selectedText) index:\(index)")
+            self.viewModel.subtypeIdx = index
             self.goButton.isEnabled = true
         }
         
@@ -55,7 +56,7 @@ class MainViewController: UIViewController {
     
     private func refreshSubtypes() {
         // 0: anime, 1: manga
-        self.subtypeDropDown.optionArray = self.typeControl.index == 0 ? self.viewModel.animeSubtypes : self.viewModel.mangaSubtypes
+        self.subtypeDropDown.optionArray = self.viewModel.subTypes
         
         // reset subtype value
         self.subtypeDropDown.selectedIndex = nil
@@ -68,23 +69,36 @@ class MainViewController: UIViewController {
     @IBAction func onTypeControlChanged(_ sender: BetterSegmentedControl) {
         print("type:\(sender.index)")
         
+        self.viewModel.typeIdx = sender.index
+        
         self.refreshSubtypes()
     }
     
     
     @IBAction func onGoButtonClick(_ sender: LoadingButton) {
+        self.typeControl.isEnabled = false
+        self.subtypeDropDown.isEnabled = false
+        
         // loading...
-        sender.showLoader(userInteraction: false) {
-            self.typeControl.isEnabled = false
-            self.subtypeDropDown.isEnabled = false
+        sender.showLoader(userInteraction: false) {}
+        
+        self.viewModel.fetchGGLBos { gglBo in
+            if let gglBo = gglBo {
+                print("gglBo:\(gglBo)")
+            }
+            else {
+                print("no data")
+                
+                let alertController = UIAlertController(title: "", message: "NO data!!!", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true)
+            }
             
-            print(self.subtypeDropDown.selectedIndex)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                sender.hideLoader {
-                    self.typeControl.isEnabled = true
-                    self.subtypeDropDown.isEnabled = true
-                }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                sender.hideLoader {}
+                self.typeControl.isEnabled = true
+                self.subtypeDropDown.isEnabled = true
             }
         }
     }

@@ -10,11 +10,8 @@ import Moya
 
 // Server API
 enum GGLService {
-    // 取得 Anime 資訊
-    case showAnimes(page: Int?=nil, subtype: String?=nil)
-    
-    // 取得 Manga 資訊
-    case showMangas(page: Int?=nil, subtype: String?=nil)
+    // 取得 ggl bo 資訊
+    case showGGLBos(type: String, page: Int, subtype: String)
 }
 
 // MARK: - TargetType Protocol Implementation
@@ -23,37 +20,22 @@ extension GGLService: TargetType {
     var baseURL: URL { URL(string: "https://api.jikan.moe/v3/top")! }
     
     var path: String {
-        var path = ""
-        
         switch self {
-            // 取得 Anime 資訊 API
-        case .showAnimes(let page, let subtype):
-            path += "/anime"
-            if let page = page {
-                path += "/\(page)"
-            }
-            if let subtype = subtype {
-                path += "\(page == nil ? "/1" : "")/\(subtype)"
+            // 取得 GGL bo 資訊 API
+        case .showGGLBos(let type, let page, let subtype):
+            var path = "/\(type)/\(page)"
+            if !subtype.isEmpty {
+                path += "/\(subtype)"
             }
             
-            // 取得 Manga 資訊 API
-        case .showMangas(let page, let subtype):
-            path += "/manga"
-            if let page = page {
-                path += "/\(page)"
-            }
-            if let subtype = subtype {
-                path += "\(page == nil ? "/1" : "")/\(subtype)"
-            }
+            return path
         }
-        print("request path:\(path)")
-        return path
     }
     
     // request 方法
     var method: Moya.Method {
         switch self {
-        case .showAnimes, .showMangas:
+        case .showGGLBos:
             return .get
         }
     }
@@ -61,7 +43,7 @@ extension GGLService: TargetType {
     // request 任務
     var task: Task {
         switch self {
-        case .showAnimes, .showMangas:
+        case .showGGLBos:
             return .requestPlain
         }
     }

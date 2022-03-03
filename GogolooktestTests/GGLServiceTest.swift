@@ -9,26 +9,23 @@ import XCTest
 
 class GGLServiceTest: XCTestCase {
 
-    var animeService: GGLAnimeService!
-    var mangaService: GGLMangaService!
+    var gglBoService: GGLBoService!
     
     override func setUp() {
         super.setUp()
-        animeService = GGLAnimeService()
-        mangaService = GGLMangaService()
+        gglBoService = GGLBoService()
     }
     
     override func tearDown() {
-        animeService = nil
-        mangaService = nil
+        gglBoService = nil
         super.tearDown()
     }
     
-    func testFetchAnimesAPI() {
+    func testFetchGGLBosAPI() {
         var responseError: Error?
-        let promise = expectation(description: "No anime.")
+        let promise = expectation(description: "No ggl bo.")
         
-        animeService.fetchAnimesAPI(page: 1, subtype: "tv") { error, anime in
+        gglBoService.fetchGGLBoAPI(page: 1, subtype: "tv") { error, bo in
             if let error = error {
                 responseError = error
             }
@@ -41,21 +38,6 @@ class GGLServiceTest: XCTestCase {
         XCTAssertNil(responseError, "Response is error.")
     }
     
-    func testFetchMangasAPI() {
-        var responseError: Error?
-        let promise = expectation(description: "No manga.")
-        
-        mangaService.fetchMangasAPI(page: 1, subtype: "manga") { error, manga in
-            if let error = error {
-                responseError = error
-            }
-            
-            promise.fulfill()
-        }
-        
-        wait(for: [promise], timeout: 5)
-        
-        XCTAssertNil(responseError, "Response is error.")
-    }
+    
     
 }
