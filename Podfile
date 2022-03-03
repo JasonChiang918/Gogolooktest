@@ -8,6 +8,9 @@ target 'Gogolooktest' do
   # Pods for Gogolooktest
   pod 'Moya', '~> 15.0'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'BetterSegmentedControl', '~> 2.0'
+  pod 'iOSDropDown'
+  pod 'MHLoadingButton'
 
   target 'GogolooktestTests' do
     inherit! :search_paths

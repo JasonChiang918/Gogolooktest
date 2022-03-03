@@ -1,4 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-Gogolooktest/Pods-Gogolooktest-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework
+${BUILT_PRODUCTS_DIR}/MHLoadingButton/MHLoadingButton.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework

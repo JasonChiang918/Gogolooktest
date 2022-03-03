@@ -14,12 +14,13 @@
 		1C566A5D27CF6F51004D4E22 /* GGLServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C566A5C27CF6F51004D4E22 /* GGLServiceTest.swift */; };
 		1C62E17127CF443F00F8CEC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E17027CF443F00F8CEC4 /* AppDelegate.swift */; };
 		1C62E17327CF443F00F8CEC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E17227CF443F00F8CEC4 /* SceneDelegate.swift */; };
-		1C62E17527CF443F00F8CEC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E17427CF443F00F8CEC4 /* ViewController.swift */; };
+		1C62E17527CF443F00F8CEC4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E17427CF443F00F8CEC4 /* MainViewController.swift */; };
 		1C62E17827CF443F00F8CEC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C62E17627CF443F00F8CEC4 /* Main.storyboard */; };
 		1C62E17A27CF444000F8CEC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C62E17927CF444000F8CEC4 /* Assets.xcassets */; };
 		1C62E17D27CF444000F8CEC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C62E17B27CF444000F8CEC4 /* LaunchScreen.storyboard */; };
 		1C62E19227CF444000F8CEC4 /* GogolooktestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */; };
 		1C62E19427CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */; };
+		1CB3BBEC27D0A7B000B3F529 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3BBEB27D0A7B000B3F529 /* MainViewModel.swift */; };
 		1CFC15EE27CF50C2000B0CE0 /* GGLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */; };
 		1CFC15EF27CF50C2000B0CE0 /* GGLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */; };
 		1CFC15F127CF5233000B0CE0 /* GGLAnimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15F027CF5233000B0CE0 /* GGLAnimeService.swift */; };
@@ -55,7 +56,7 @@
 		1C62E16D27CF443F00F8CEC4 /* Gogolooktest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gogolooktest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C62E17027CF443F00F8CEC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C62E17227CF443F00F8CEC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1C62E17427CF443F00F8CEC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1C62E17427CF443F00F8CEC4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1C62E17727CF443F00F8CEC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C62E17927CF444000F8CEC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C62E17C27CF444000F8CEC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 		1C62E18D27CF444000F8CEC4 /* GogolooktestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogolooktestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestUITests.swift; sourceTree = "<group>"; };
 		1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1CB3BBEB27D0A7B000B3F529 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLService.swift; sourceTree = "<group>"; };
 		1CFC15F027CF5233000B0CE0 /* GGLAnimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLAnimeService.swift; sourceTree = "<group>"; };
 		1CFC15F327CF55FD000B0CE0 /* Anime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime.swift; sourceTree = "<group>"; };
@@ -106,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C566A5F27D09E19004D4E22 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1C62E17627CF443F00F8CEC4 /* Main.storyboard */,
+				1C62E17427CF443F00F8CEC4 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		1C62E16427CF443F00F8CEC4 = {
 			isa = PBXGroup;
 			children = (
@@ -131,16 +142,16 @@
 		1C62E16F27CF443F00F8CEC4 /* Gogolooktest */ = {
 			isa = PBXGroup;
 			children = (
-				1C62E1A027CF44A600F8CEC4 /* Model */,
-				1C62E1A127CF44AB00F8CEC4 /* View */,
-				1C62E1A227CF44B200F8CEC4 /* ViewModel */,
-				1C62E1A327CF44B900F8CEC4 /* Service */,
-				1C62E1A427CF44BE00F8CEC4 /* Extension */,
 				1C62E17027CF443F00F8CEC4 /* AppDelegate.swift */,
 				1C62E17227CF443F00F8CEC4 /* SceneDelegate.swift */,
 				1C62E17927CF444000F8CEC4 /* Assets.xcassets */,
 				1C62E17B27CF444000F8CEC4 /* LaunchScreen.storyboard */,
 				1C62E17E27CF444000F8CEC4 /* Info.plist */,
+				1C62E1A027CF44A600F8CEC4 /* Model */,
+				1C62E1A127CF44AB00F8CEC4 /* View */,
+				1C62E1A227CF44B200F8CEC4 /* ViewModel */,
+				1C62E1A327CF44B900F8CEC4 /* Service */,
+				1C62E1A427CF44BE00F8CEC4 /* Extension */,
 			);
 			path = Gogolooktest;
 			sourceTree = "<group>";
@@ -174,8 +185,7 @@
 		1C62E1A127CF44AB00F8CEC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1C62E17627CF443F00F8CEC4 /* Main.storyboard */,
-				1C62E17427CF443F00F8CEC4 /* ViewController.swift */,
+				1C566A5F27D09E19004D4E22 /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 		1C62E1A227CF44B200F8CEC4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1CB3BBED27D0A7B900B3F529 /* Main */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,6 +213,14 @@
 			children = (
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		1CB3BBED27D0A7B900B3F529 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1CB3BBEB27D0A7B000B3F529 /* MainViewModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		1F94850C855B949DFE9E4D04 /* Frameworks */ = {
@@ -467,13 +486,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CFC15F427CF55FD000B0CE0 /* Anime.swift in Sources */,
-				1C62E17527CF443F00F8CEC4 /* ViewController.swift in Sources */,
+				1C62E17527CF443F00F8CEC4 /* MainViewController.swift in Sources */,
 				1CFC15F127CF5233000B0CE0 /* GGLAnimeService.swift in Sources */,
 				1C62E17127CF443F00F8CEC4 /* AppDelegate.swift in Sources */,
 				1CFC15EE27CF50C2000B0CE0 /* GGLService.swift in Sources */,
 				1C566A4E27CF68FE004D4E22 /* Manga.swift in Sources */,
 				1C62E17327CF443F00F8CEC4 /* SceneDelegate.swift in Sources */,
 				1C566A5127CF697E004D4E22 /* GGLMangaService.swift in Sources */,
+				1CB3BBEC27D0A7B000B3F529 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +605,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -640,6 +661,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -664,8 +686,11 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -693,8 +718,11 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
