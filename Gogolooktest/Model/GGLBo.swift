@@ -23,8 +23,8 @@ struct TopInfo: Decodable {
     let mal_id: Int
     let rank: Int
     let title: String
-    let url: String
-    let image_url: String
+    let url: String?
+    let image_url: String?
     let type: String
     let start_date: String?
     let end_date: String?

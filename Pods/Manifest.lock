@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.5.0)
   - BetterSegmentedControl (2.0.1)
   - iOSDropDown (0.3.4)
+  - Kingfisher (7.2.0)
   - MHLoadingButton (0.1.3)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
@@ -12,6 +13,7 @@ PODS:
 DEPENDENCIES:
   - BetterSegmentedControl (~> 2.0)
   - iOSDropDown
+  - Kingfisher (~> 7.0)
   - MHLoadingButton
   - Moya (~> 15.0)
   - SnapKit (~> 5.0.0)
@@ -21,6 +23,7 @@ SPEC REPOS:
     - Alamofire
     - BetterSegmentedControl
     - iOSDropDown
+    - Kingfisher
     - MHLoadingButton
     - Moya
     - SnapKit
@@ -29,10 +32,11 @@ SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   MHLoadingButton: 13bab47a3ce9d88df15638b7a5b73a8ac9f21077
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 727b08b2c97f074ffc9e84165f01d998f0ed9264
+PODFILE CHECKSUM: e370c6d0f508e26450f344a262dfc1869321f595
 
 COCOAPODS: 1.11.2

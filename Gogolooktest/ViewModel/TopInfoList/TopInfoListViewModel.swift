@@ -7,8 +7,10 @@
 
 import Foundation
 
-// 主畫面 view model
+// TopInfo list view model
 final class TopInfoListViewModel: NSObject {
+    
+    weak var mainViewModel: MainViewModel?
     
     // 顯示資訊
     var topInfos: [TopInfo]!
@@ -18,10 +20,28 @@ final class TopInfoListViewModel: NSObject {
         super.init()
     }
     
-    init(topInfos: [TopInfo]) {
+    init(topInfos: [TopInfo], mainViewModel: MainViewModel?) {
         super.init()
         
         self.topInfos = topInfos
+        self.mainViewModel = mainViewModel
+    }
+    
+    func getTopInfos(completionHandler: @escaping (_ hasNewData: Bool) -> Void) {
+        self.mainViewModel?.fetchTopInfos(page: self.pageIdx+1, completionHandler: { newTopInfos in
+            if let newTopInfos = newTopInfos {
+                self.pageIdx += 1
+                
+                self.topInfos += newTopInfos
+                
+                completionHandler(true)
+            }
+            else {
+                // end no data
+                completionHandler(false)
+            }
+        })
+                 
     }
     
 }

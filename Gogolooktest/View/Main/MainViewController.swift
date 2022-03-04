@@ -84,12 +84,12 @@ class MainViewController: UIViewController {
         // loading...
         sender.showLoader(userInteraction: false) {}
         
-        self.viewModel.fetchGGLBos { topInfos in
+        self.viewModel.fetchTopInfos { topInfos in
             DispatchQueue.main.async {
                 if let topInfos = topInfos {
                     print("topInfos:\(topInfos)")
                     
-                    let viewController = TopInfoListViewController.instantiate(viewModel: TopInfoListViewModel(topInfos: topInfos))
+                    let viewController = TopInfoListViewController.instantiate(viewModel: TopInfoListViewModel(topInfos: topInfos, mainViewModel: self.viewModel))
                     
                     self.navigationController?.pushViewController(viewController, animated: true)
                 }

@@ -17,6 +17,11 @@
 		1C62E19227CF444000F8CEC4 /* GogolooktestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */; };
 		1C62E19427CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */; };
 		1CB3BBEC27D0A7B000B3F529 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3BBEB27D0A7B000B3F529 /* MainViewModel.swift */; };
+		1CD82AB227D26AED00715C34 /* UIImageView+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD82AB127D26AED00715C34 /* UIImageView+extention.swift */; };
+		1CD82AB927D2970A00715C34 /* TopInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD82AB727D2970A00715C34 /* TopInfoCollectionViewCell.swift */; };
+		1CD82ABA27D2970A00715C34 /* TopInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CD82AB827D2970A00715C34 /* TopInfoCollectionViewCell.xib */; };
+		1CD82ABD27D297F200715C34 /* TopInfoFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD82ABB27D297F200715C34 /* TopInfoFooterCollectionReusableView.swift */; };
+		1CD82ABE27D297F200715C34 /* TopInfoFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CD82ABC27D297F200715C34 /* TopInfoFooterCollectionReusableView.xib */; };
 		1CFC15EE27CF50C2000B0CE0 /* GGLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */; };
 		1CFC15EF27CF50C2000B0CE0 /* GGLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */; };
 		1CFC15F127CF5233000B0CE0 /* GGLBoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15F027CF5233000B0CE0 /* GGLBoService.swift */; };
@@ -25,9 +30,11 @@
 		1CFC15F527CF55FD000B0CE0 /* GGLBo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC15F327CF55FD000B0CE0 /* GGLBo.swift */; };
 		1CFE133B27D1E91600FDB13B /* TopInfoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE133927D1E91600FDB13B /* TopInfoListViewController.swift */; };
 		1CFE133C27D1E91600FDB13B /* TopInfoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE133927D1E91600FDB13B /* TopInfoListViewController.swift */; };
-		1CFE133D27D1E91600FDB13B /* TopInfoListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE133A27D1E91600FDB13B /* TopInfoListView.xib */; };
-		1CFE133E27D1E91600FDB13B /* TopInfoListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE133A27D1E91600FDB13B /* TopInfoListView.xib */; };
 		1CFE134127D1EADE00FDB13B /* TopInfoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE134027D1EADE00FDB13B /* TopInfoListViewModel.swift */; };
+		1CFE134327D1F24E00FDB13B /* TopInfoListViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE134227D1F24E00FDB13B /* TopInfoListViewController+delegate.swift */; };
+		1CFE134527D1F25B00FDB13B /* TopInfoListViewController+datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE134427D1F25B00FDB13B /* TopInfoListViewController+datasource.swift */; };
+		1CFE135327D20DDD00FDB13B /* TopInfoListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE135027D20DDD00FDB13B /* TopInfoListView.xib */; };
+		1CFE135427D20DDD00FDB13B /* TopInfoListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE135027D20DDD00FDB13B /* TopInfoListView.xib */; };
 		53871DCEC471DBC0B01D5B3A /* Pods_GogolooktestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB35DC45BB7534E35174509 /* Pods_GogolooktestTests.framework */; };
 		B09D2E2067230403942C1E47 /* Pods_Gogolooktest_GogolooktestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31467256FB828BC7FA4612B /* Pods_Gogolooktest_GogolooktestUITests.framework */; };
 		C7650010AC6AEAB7F8034561 /* Pods_Gogolooktest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26216E1265FD5798EEEC37C7 /* Pods_Gogolooktest.framework */; };
@@ -65,12 +72,19 @@
 		1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestUITests.swift; sourceTree = "<group>"; };
 		1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1CB3BBEB27D0A7B000B3F529 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1CD82AB127D26AED00715C34 /* UIImageView+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extention.swift"; sourceTree = "<group>"; };
+		1CD82AB727D2970A00715C34 /* TopInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		1CD82AB827D2970A00715C34 /* TopInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		1CD82ABB27D297F200715C34 /* TopInfoFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoFooterCollectionReusableView.swift; sourceTree = "<group>"; };
+		1CD82ABC27D297F200715C34 /* TopInfoFooterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopInfoFooterCollectionReusableView.xib; sourceTree = "<group>"; };
 		1CFC15ED27CF50C2000B0CE0 /* GGLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLService.swift; sourceTree = "<group>"; };
 		1CFC15F027CF5233000B0CE0 /* GGLBoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLBoService.swift; sourceTree = "<group>"; };
 		1CFC15F327CF55FD000B0CE0 /* GGLBo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GGLBo.swift; sourceTree = "<group>"; };
 		1CFE133927D1E91600FDB13B /* TopInfoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoListViewController.swift; sourceTree = "<group>"; };
-		1CFE133A27D1E91600FDB13B /* TopInfoListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopInfoListView.xib; sourceTree = "<group>"; };
 		1CFE134027D1EADE00FDB13B /* TopInfoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoListViewModel.swift; sourceTree = "<group>"; };
+		1CFE134227D1F24E00FDB13B /* TopInfoListViewController+delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopInfoListViewController+delegate.swift"; sourceTree = "<group>"; };
+		1CFE134427D1F25B00FDB13B /* TopInfoListViewController+datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopInfoListViewController+datasource.swift"; sourceTree = "<group>"; };
+		1CFE135027D20DDD00FDB13B /* TopInfoListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopInfoListView.xib; sourceTree = "<group>"; };
 		26216E1265FD5798EEEC37C7 /* Pods_Gogolooktest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gogolooktest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		579CA6F8A92CA8731EBA62D4 /* Pods-Gogolooktest-GogolooktestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gogolooktest-GogolooktestUITests.release.xcconfig"; path = "Target Support Files/Pods-Gogolooktest-GogolooktestUITests/Pods-Gogolooktest-GogolooktestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7836C3B10CD0D02AB41A6C7B /* Pods-Gogolooktest-GogolooktestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gogolooktest-GogolooktestUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gogolooktest-GogolooktestUITests/Pods-Gogolooktest-GogolooktestUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +227,7 @@
 		1C62E1A427CF44BE00F8CEC4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1CD82AB127D26AED00715C34 /* UIImageView+extention.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -225,11 +240,25 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		1CD82AA027D257C500715C34 /* TopInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				1CD82AB827D2970A00715C34 /* TopInfoCollectionViewCell.xib */,
+				1CD82AB727D2970A00715C34 /* TopInfoCollectionViewCell.swift */,
+				1CD82ABC27D297F200715C34 /* TopInfoFooterCollectionReusableView.xib */,
+				1CD82ABB27D297F200715C34 /* TopInfoFooterCollectionReusableView.swift */,
+			);
+			path = TopInfoView;
+			sourceTree = "<group>";
+		};
 		1CFE133427D1E89D00FDB13B /* TopInfoList */ = {
 			isa = PBXGroup;
 			children = (
-				1CFE133A27D1E91600FDB13B /* TopInfoListView.xib */,
+				1CFE135027D20DDD00FDB13B /* TopInfoListView.xib */,
 				1CFE133927D1E91600FDB13B /* TopInfoListViewController.swift */,
+				1CFE134227D1F24E00FDB13B /* TopInfoListViewController+delegate.swift */,
+				1CFE134427D1F25B00FDB13B /* TopInfoListViewController+datasource.swift */,
+				1CD82AA027D257C500715C34 /* TopInfoView */,
 			);
 			path = TopInfoList;
 			sourceTree = "<group>";
@@ -374,9 +403,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CFE133D27D1E91600FDB13B /* TopInfoListView.xib in Resources */,
+				1CD82ABE27D297F200715C34 /* TopInfoFooterCollectionReusableView.xib in Resources */,
+				1CFE135327D20DDD00FDB13B /* TopInfoListView.xib in Resources */,
 				1C62E17D27CF444000F8CEC4 /* LaunchScreen.storyboard in Resources */,
 				1C62E17A27CF444000F8CEC4 /* Assets.xcassets in Resources */,
+				1CD82ABA27D2970A00715C34 /* TopInfoCollectionViewCell.xib in Resources */,
 				1C62E17827CF443F00F8CEC4 /* MainView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,7 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CFE133E27D1E91600FDB13B /* TopInfoListView.xib in Resources */,
+				1CFE135427D20DDD00FDB13B /* TopInfoListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,14 +537,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CD82AB927D2970A00715C34 /* TopInfoCollectionViewCell.swift in Sources */,
 				1CFC15F427CF55FD000B0CE0 /* GGLBo.swift in Sources */,
+				1CFE134527D1F25B00FDB13B /* TopInfoListViewController+datasource.swift in Sources */,
 				1CFE134127D1EADE00FDB13B /* TopInfoListViewModel.swift in Sources */,
 				1C62E17527CF443F00F8CEC4 /* MainViewController.swift in Sources */,
+				1CFE134327D1F24E00FDB13B /* TopInfoListViewController+delegate.swift in Sources */,
 				1CFC15F127CF5233000B0CE0 /* GGLBoService.swift in Sources */,
 				1C62E17127CF443F00F8CEC4 /* AppDelegate.swift in Sources */,
 				1CFE133B27D1E91600FDB13B /* TopInfoListViewController.swift in Sources */,
 				1CFC15EE27CF50C2000B0CE0 /* GGLService.swift in Sources */,
+				1CD82AB227D26AED00715C34 /* UIImageView+extention.swift in Sources */,
 				1C62E17327CF443F00F8CEC4 /* SceneDelegate.swift in Sources */,
+				1CD82ABD27D297F200715C34 /* TopInfoFooterCollectionReusableView.swift in Sources */,
 				1CB3BBEC27D0A7B000B3F529 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,7 +756,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -752,7 +788,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

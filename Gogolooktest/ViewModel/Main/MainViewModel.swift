@@ -19,11 +19,11 @@ final class MainViewModel: NSObject {
         self.gglBoService = gglBoService
     }
     
-    func fetchGGLBos(completionHandler: @escaping (_ topInfos: [TopInfo]?) -> Void) {
+    func fetchTopInfos(page: Int? = 0, completionHandler: @escaping (_ topInfos: [TopInfo]?) -> Void) {
         let mainType = mainTypes[typeIdx].lowercased()
         let subType = subtypeIdx == 0 ? "" : subTypes[subtypeIdx].lowercased()
         
-        self.gglBoService.fetchGGLBoAPI(type: mainType, page: 1, subtype: subType) { error, responseData in
+        self.gglBoService.fetchGGLBoAPI(type: mainType, page: page!+1, subtype: subType) { error, responseData in
             guard let _ = error, let _ = responseData else {
                 completionHandler(responseData)
                 
