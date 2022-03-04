@@ -26,8 +26,8 @@ struct TopInfo: Decodable {
     let url: String
     let image_url: String
     let type: String
-    let start_date: String
+    let start_date: String?
     let end_date: String?
-    let members: Int
-    let score: Float
+    let members: Int?
+    let score: Float?
 }

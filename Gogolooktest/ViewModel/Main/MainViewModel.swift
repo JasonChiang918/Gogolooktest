@@ -11,9 +11,7 @@ import Foundation
 final class MainViewModel: NSObject {
     
     var typeIdx = 0
-    var pageIdx = 0
     var subtypeIdx = 0
-    var gglBo: GGLBo!
     
     private let gglBoService: GGLBoServiceProtocol
     
@@ -21,15 +19,13 @@ final class MainViewModel: NSObject {
         self.gglBoService = gglBoService
     }
     
-    func fetchGGLBos(completionHandler: @escaping (_ gglBo: GGLBo?) -> Void) {
+    func fetchGGLBos(completionHandler: @escaping (_ topInfos: [TopInfo]?) -> Void) {
         let mainType = mainTypes[typeIdx].lowercased()
-        let page = pageIdx+1
         let subType = subtypeIdx == 0 ? "" : subTypes[subtypeIdx].lowercased()
         
-        self.gglBoService.fetchGGLBoAPI(type: mainType, page: page, subtype: subType) { error, responseData in
-            guard let _ = error, let responseData = responseData else {
-                self.gglBo = responseData
-                completionHandler(self.gglBo)
+        self.gglBoService.fetchGGLBoAPI(type: mainType, page: 1, subtype: subType) { error, responseData in
+            guard let _ = error, let _ = responseData else {
+                completionHandler(responseData)
                 
                 return
             }

@@ -38,6 +38,8 @@ class MainViewController: UIViewController {
     }
     
     private func setupUI() {
+        self.title = "GoGoLook Test"
+        
         // init type control
         self.typeControl.segments = LabelSegment.segments(withTitles: self.viewModel.mainTypes, normalFont: .systemFont(ofSize: 24), normalTextColor: .systemGray, selectedFont: .systemFont(ofSize: 24), selectedTextColor: .white)
         
@@ -82,23 +84,29 @@ class MainViewController: UIViewController {
         // loading...
         sender.showLoader(userInteraction: false) {}
         
-        self.viewModel.fetchGGLBos { gglBo in
-            if let gglBo = gglBo {
-                print("gglBo:\(gglBo)")
-            }
-            else {
-                print("no data")
+        self.viewModel.fetchGGLBos { topInfos in
+            DispatchQueue.main.async {
+                if let topInfos = topInfos {
+                    print("topInfos:\(topInfos)")
+                    
+                    let viewController = TopInfoListViewController.instantiate(viewModel: TopInfoListViewModel(topInfos: topInfos))
+                    
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                }
+                else {
+                    print("no data")
+                    
+                    let alertController = UIAlertController(title: "", message: "NO data!!!", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true)
+                }
                 
-                let alertController = UIAlertController(title: "", message: "NO data!!!", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true)
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 sender.hideLoader {}
                 self.typeControl.isEnabled = true
                 self.subtypeDropDown.isEnabled = true
+                
+                
             }
         }
     }
