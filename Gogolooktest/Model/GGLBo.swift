@@ -31,3 +31,32 @@ struct TopInfo: Decodable {
     let members: Int?
     let score: Float?
 }
+
+// main type 資訊
+enum MainType: String, CaseIterable {
+    case Anime, Manga
+    
+    static var typeStrings: [String]! {
+        MainType.allCases.map { $0.rawValue }
+    }
+}
+
+// anime type 資訊
+enum AnimeSubtype: String, CaseIterable {
+    case AllTypes, airing, upcoming, tv, movie, ova, special, bypopularity, favorite
+    
+    static var typeStrings: [String]! {
+        AnimeSubtype.allCases.map { $0.rawValue }
+    }
+    
+}
+
+// manga type 資訊
+enum MangaSubtype: String, CaseIterable {
+    case AllTypes, manga, novels, oneshots, doujin, manhwa, manhua, bypopularity, favorite
+    
+    static var typeStrings: [String]! {
+        MangaSubtype.allCases.map { $0.rawValue }
+    }
+    
+}

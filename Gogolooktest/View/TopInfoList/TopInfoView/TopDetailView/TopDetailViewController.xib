@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopDetailViewController" customModule="Gogolooktest" customModuleProvider="target">
+            <connections>
+                <outlet property="backwardButton" destination="hIF-Is-7ze" id="gtr-mx-JfW"/>
+                <outlet property="forwardButton" destination="9tf-US-dUF" id="tSa-Zh-blP"/>
+                <outlet property="loadingIndicatorView" destination="LWQ-hI-brd" id="riR-0o-0f6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="dVd-J9-eHc" id="VMK-hE-JXT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVp-QR-dOF">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="XDw-ZI-qT8"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem image="arrowshape.turn.up.backward.fill" catalog="system" id="hIF-Is-7ze">
+                            <connections>
+                                <action selector="onBackwardAction:" destination="-1" id="GWa-yo-wWN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="ypH-Za-TPr"/>
+                        <barButtonItem image="arrowshape.turn.up.forward.fill" catalog="system" id="9tf-US-dUF">
+                            <connections>
+                                <action selector="onForwardAction:" destination="-1" id="CM0-qX-D4T"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVd-J9-eHc">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LWQ-hI-brd">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="color" red="0.36078431370000003" green="0.77647058820000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="LVp-QR-dOF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4YV-ia-mow"/>
+                <constraint firstItem="LVp-QR-dOF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8U3-Ki-NT6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dVd-J9-eHc" secondAttribute="bottom" id="IpO-zi-v8h"/>
+                <constraint firstItem="LWQ-hI-brd" firstAttribute="top" secondItem="LVp-QR-dOF" secondAttribute="bottom" id="OiQ-1H-xD6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dVd-J9-eHc" secondAttribute="trailing" id="TAf-OY-iZz"/>
+                <constraint firstItem="LVp-QR-dOF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Z1n-q3-yJN"/>
+                <constraint firstItem="LWQ-hI-brd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="alg-M0-6vD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LWQ-hI-brd" secondAttribute="bottom" id="cjf-HM-jnU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LWQ-hI-brd" secondAttribute="trailing" id="lJg-ZN-asw"/>
+                <constraint firstItem="dVd-J9-eHc" firstAttribute="top" secondItem="LVp-QR-dOF" secondAttribute="bottom" id="tmv-Es-tax"/>
+                <constraint firstItem="dVd-J9-eHc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vmH-Fh-WC2"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="40"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="arrowshape.turn.up.forward.fill" catalog="system" width="128" height="106"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -17,10 +17,28 @@ extension TopInfoListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as? TopInfoCollectionViewCell {
+            cell.viewModel = TopInfoCollectionViewModel(subtypes: self.viewModel.subTypes)
+            
             let topInfo = self.viewModel.topInfos[indexPath.row]
-            cell.titleLabel.text = topInfo.title
+            // + "\n" 保持最少2行置頂
+            cell.titleLabel.text = topInfo.title + "\n"
             cell.typeLabel.text = topInfo.type
             cell.rankLabel.text = "\(topInfo.rank)"
+            var date = ""
+            if let startDate = topInfo.start_date {
+                date += startDate
+            }
+            else {
+                date += "?"
+            }
+            date += "~"
+            if let endDate = topInfo.end_date {
+                date += endDate
+            }
+            else {
+                date += "now"
+            }
+            cell.dateLabel.text = date
             if let imageUrlString = topInfo.image_url, let imageUrl = URL(string: imageUrlString) {
                 let resource = ImageResource(downloadURL: imageUrl, cacheKey: imageUrlString)
                 cell.infoImageView.kf.setImage(with: resource)
@@ -41,14 +59,22 @@ extension TopInfoListViewController: UICollectionViewDataSource {
             return
         }
         
-        if indexPath.row == self.viewModel.topInfos.count-2  {
+        if indexPath.row == self.viewModel.topInfos.count-1  {
             self.getNextPage()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionFooter {
-            if let aFooterView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LoadingIdentifier, for: indexPath) as? TopInfoFooterCollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            if let aHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FilterViewIdentifier, for: indexPath) as? TopInfoFilterViewCell {
+                filterView = aHeaderView
+                filterView?.viewModel = TopInfoFilterViewModel(subtypes: self.viewModel.subTypes)
+                
+                return aHeaderView
+            }
+        }
+        else if kind == UICollectionView.elementKindSectionFooter {
+            if let aFooterView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LoadingIdentifier, for: indexPath) as? TopInfoLoadingViewCell {
                 loadingView = aFooterView
                 loadingView?.backgroundColor = UIColor.clear
                 

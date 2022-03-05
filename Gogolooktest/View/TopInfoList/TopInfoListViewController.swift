@@ -13,12 +13,15 @@ class TopInfoListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    final let RowCount = 3.0
     final let CellIdentifier = "TopInfoCell"
-    final let LoadingIdentifier = "LoadingIndicator"
+    final let FilterViewIdentifier = "TopInfoFilterViewCell"
+    final let LoadingIdentifier = "TopInfoLoadingViewCell"
     
     var viewModel: TopInfoListViewModel!
     
-    var loadingView: TopInfoFooterCollectionReusableView?
+    var filterView: TopInfoFilterViewCell?
+    var loadingView: TopInfoLoadingViewCell?
     var fetchingData = false
     var noMoreData = false
     
@@ -29,7 +32,7 @@ class TopInfoListViewController: UIViewController {
         
         return viewController
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,15 +42,16 @@ class TopInfoListViewController: UIViewController {
     
     // 設定頁面
     private func setupView() {
-        self.title = "TOP"
+        self.title = self.viewModel.type.rawValue
         
         self.collectionView.register(UINib.init(nibName: "TopInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CellIdentifier)
-        self.collectionView.register(UINib.init(nibName: "TopInfoFooterCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: LoadingIdentifier)
+        self.collectionView.register(UINib.init(nibName: "TopInfoFilterViewCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: FilterViewIdentifier)
+        self.collectionView.register(UINib.init(nibName: "TopInfoLoadingViewCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: LoadingIdentifier)
         
         if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            let space: CGFloat = layout.minimumInteritemSpacing + layout.sectionInset.left + layout.sectionInset.right
-            let size: CGFloat = (UIScreen.main.bounds.width - space) / 2.0
-            layout.itemSize = CGSize(width: size, height: size * 1.8)
+            let space: CGFloat = layout.minimumInteritemSpacing * (RowCount-1) + layout.sectionInset.left + layout.sectionInset.right
+            let size: CGFloat = (UIScreen.main.bounds.width - space) / RowCount
+            layout.itemSize = CGSize(width: size, height: size * 2.4)
         }
     }
     
@@ -59,9 +63,6 @@ class TopInfoListViewController: UIViewController {
         fetchingData = true
             
         DispatchQueue.global().async {
-            
-            sleep(1)
-            
             self.viewModel.getTopInfos() { hasNewData in
                 DispatchQueue.main.async {
                     if !hasNewData {
@@ -69,7 +70,7 @@ class TopInfoListViewController: UIViewController {
                         self.loadingView?.loadingIndicatorView.isHidden = true
                         self.loadingView?.endLabel.isHidden = false
                     }
-                
+                    
                     self.collectionView.reloadData()
                     self.fetchingData = false
                 }

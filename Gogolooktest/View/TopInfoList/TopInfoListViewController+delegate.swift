@@ -10,11 +10,20 @@ import UIKit
 // UICollectionViewDelegate
 extension TopInfoListViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        if self.fetchingData {
-            return CGSize.zero
-        } else {
-            return CGSize(width: collectionView.bounds.size.width, height: 55)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let topInfo = self.viewModel.topInfos[indexPath.row]
+        if let detailUrlString = topInfo.url, let detailUrl = URL(string: detailUrlString) {
+            let viewController = TopDetailViewController.instantiate(viewModel: TopDetailViewModel(detailTitle: topInfo.title, detailUrl: detailUrl))
+        
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+        else {
+            print("no detail url")
+            
+            let alertController = UIAlertController(title: "", message: "NO detail url!!!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true)
         }
     }
     

@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Gogolooktest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdl-Tx-QBt">
-                                <rect key="frame" x="137.5" y="88" width="139.5" height="60"/>
+                                <rect key="frame" x="137.5" y="0.0" width="139.5" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="TTJ-sW-8vb"/>
                                 </constraints>
@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibh-sc-J9U">
-                                <rect key="frame" x="20" y="158" width="374" height="80"/>
+                                <rect key="frame" x="20" y="70" width="374" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMa-F9-Hcw" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                         <rect key="frame" x="10" y="10" width="354" height="60"/>
@@ -63,44 +63,8 @@
                                     <constraint firstItem="PMa-F9-Hcw" firstAttribute="leading" secondItem="Ibh-sc-J9U" secondAttribute="leading" constant="10" id="kmW-fU-NvC"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Subtype" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evI-W7-xYI">
-                                <rect key="frame" x="118.5" y="258" width="177.5" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="CcX-L7-e88"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <color key="textColor" red="0.36078431370000003" green="0.77647058820000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGn-ik-T6X">
-                                <rect key="frame" x="20" y="328" width="374" height="80"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="choose a subtype..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1qf-oN-J29" customClass="DropDown" customModule="iOSDropDown">
-                                        <rect key="frame" x="10" y="10" width="354" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="1qf-oN-J29" firstAttribute="top" secondItem="wGn-ik-T6X" secondAttribute="top" constant="10" id="1SS-mG-cP1"/>
-                                    <constraint firstAttribute="bottom" secondItem="1qf-oN-J29" secondAttribute="bottom" constant="10" id="GMB-sO-c8a"/>
-                                    <constraint firstAttribute="height" constant="80" id="GYN-No-myJ"/>
-                                    <constraint firstItem="1qf-oN-J29" firstAttribute="leading" secondItem="wGn-ik-T6X" secondAttribute="leading" constant="10" id="Kcg-rL-ul7"/>
-                                    <constraint firstAttribute="trailing" secondItem="1qf-oN-J29" secondAttribute="trailing" constant="10" id="ajd-E0-NOk"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8f-Dc-7HJ" customClass="LoadingButton" customModule="MHLoadingButton">
-                                <rect key="frame" x="82" y="458" width="250" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8f-Dc-7HJ" customClass="LoadingButton" customModule="MHLoadingButton">
+                                <rect key="frame" x="82" y="200" width="250" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="CIe-Zo-5Bh"/>
                                     <constraint firstAttribute="height" constant="60" id="NSb-sm-rdS"/>
@@ -124,22 +88,16 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ibh-sc-J9U" secondAttribute="trailing" constant="20" id="5id-52-k7Q"/>
                             <constraint firstItem="Jdl-Tx-QBt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="912-Rm-2gq"/>
-                            <constraint firstItem="wGn-ik-T6X" firstAttribute="leading" secondItem="Ibh-sc-J9U" secondAttribute="leading" id="CmK-Vh-Hti"/>
-                            <constraint firstItem="wGn-ik-T6X" firstAttribute="top" secondItem="evI-W7-xYI" secondAttribute="bottom" constant="10" id="LZu-vd-Sgd"/>
-                            <constraint firstItem="evI-W7-xYI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ThY-MZ-buq"/>
                             <constraint firstItem="Ibh-sc-J9U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tzd-Lx-q4f"/>
                             <constraint firstItem="P8f-Dc-7HJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z5F-RQ-8GD"/>
-                            <constraint firstItem="wGn-ik-T6X" firstAttribute="trailing" secondItem="Ibh-sc-J9U" secondAttribute="trailing" id="bPU-cd-k5K"/>
                             <constraint firstItem="Jdl-Tx-QBt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bZO-2K-JGA"/>
-                            <constraint firstItem="evI-W7-xYI" firstAttribute="top" secondItem="Ibh-sc-J9U" secondAttribute="bottom" constant="20" id="hcv-4I-PrS"/>
+                            <constraint firstItem="P8f-Dc-7HJ" firstAttribute="top" secondItem="Ibh-sc-J9U" secondAttribute="bottom" constant="50" id="iXo-2O-sOP"/>
                             <constraint firstItem="Ibh-sc-J9U" firstAttribute="top" secondItem="Jdl-Tx-QBt" secondAttribute="bottom" constant="10" id="ibc-Fi-KdW"/>
-                            <constraint firstItem="P8f-Dc-7HJ" firstAttribute="top" secondItem="wGn-ik-T6X" secondAttribute="bottom" constant="50" id="nYd-Ls-74T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vFz-VA-cEX"/>
                     <connections>
                         <outlet property="goButton" destination="P8f-Dc-7HJ" id="olu-VF-Ttn"/>
-                        <outlet property="subtypeDropDown" destination="1qf-oN-J29" id="VyD-4b-SlP"/>
                         <outlet property="typeControl" destination="PMa-F9-Hcw" id="TxD-Aj-8eH"/>
                     </connections>
                 </viewController>
@@ -152,7 +110,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4So-Dg-WZm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JJO-H9-1Oj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="JJO-H9-1Oj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -169,9 +127,6 @@
     <designables>
         <designable name="P8f-Dc-7HJ">
             <size key="intrinsicContentSize" width="62.5" height="45.5"/>
-        </designable>
-        <designable name="PMa-F9-Hcw">
-            <size key="intrinsicContentSize" width="165" height="32"/>
         </designable>
     </designables>
     <resources>

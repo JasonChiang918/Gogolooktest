@@ -10,9 +10,13 @@ import Foundation
 // TopInfo list view model
 final class TopInfoListViewModel: NSObject {
     
-    weak var mainViewModel: MainViewModel?
+    weak var mainViewModel: MainViewModel!
     
     // 顯示資訊
+    var type: MainType!
+    var subTypes: [String]! {
+        return self.type == .Anime ? AnimeSubtype.typeStrings : MangaSubtype.typeStrings
+    }
     var topInfos: [TopInfo]!
     var pageIdx = 0
     
@@ -20,12 +24,14 @@ final class TopInfoListViewModel: NSObject {
         super.init()
     }
     
-    init(topInfos: [TopInfo], mainViewModel: MainViewModel?) {
+    init(mainViewModel: MainViewModel, topInfos: [TopInfo]) {
         super.init()
         
-        self.topInfos = topInfos
         self.mainViewModel = mainViewModel
+        self.type = mainViewModel.type
+        self.topInfos = topInfos
     }
+    
     
     func getTopInfos(completionHandler: @escaping (_ hasNewData: Bool) -> Void) {
         self.mainViewModel?.fetchTopInfos(page: self.pageIdx+1, completionHandler: { newTopInfos in

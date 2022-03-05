@@ -9,7 +9,6 @@ target 'Gogolooktest' do
   pod 'Moya', '~> 15.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'BetterSegmentedControl', '~> 2.0'
-  pod 'iOSDropDown'
   pod 'MHLoadingButton'
   pod 'Kingfisher', '~> 7.0'
 
