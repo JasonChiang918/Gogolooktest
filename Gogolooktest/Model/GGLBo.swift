@@ -36,6 +36,10 @@ struct TopInfo: Decodable {
 enum MainType: String, CaseIterable {
     case Anime, Manga
     
+    init(idx: Int) {
+        self = (.init(rawValue: MainType.typeStrings[idx]) ?? .Anime)
+    }
+    
     static var typeStrings: [String]! {
         MainType.allCases.map { $0.rawValue }
     }
@@ -47,6 +51,14 @@ enum AnimeSubtype: String, CaseIterable {
     
     static var typeStrings: [String]! {
         AnimeSubtype.allCases.map { $0.rawValue }
+    }
+    
+    static var All: AnimeSubtype {
+        return AnimeSubtype.allCases[0]
+    }
+    
+    static func IsAll(type: String) -> Bool {
+        return type.lowercased() == All.rawValue.lowercased()
     }
     
 }

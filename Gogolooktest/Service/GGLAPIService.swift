@@ -1,5 +1,5 @@
 //
-//  GGLService.swift
+//  GGLAPIService.swift
 //  Gogolooktest
 //
 //  Created by Chih-Yi Chiang on 2022/3/2.
@@ -9,13 +9,13 @@ import Foundation
 import Moya
 
 // Server API
-enum GGLService {
+enum GGLAPIService {
     // 取得 ggl bo 資訊
     case showGGLBos(type: String, page: Int, subtype: String)
 }
 
 // MARK: - TargetType Protocol Implementation
-extension GGLService: TargetType {
+extension GGLAPIService: TargetType {
     
     var baseURL: URL { URL(string: "https://api.jikan.moe/v3/top")! }
     
@@ -27,7 +27,7 @@ extension GGLService: TargetType {
             if !subtype.isEmpty {
                 path += "/\(subtype)"
             }
-            
+            print("request path:\(path)")
             return path
         }
     }

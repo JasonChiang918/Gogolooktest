@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Gogolooktest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Gogolooktest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="onGoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Iz-gH-NnW"/>
+                                    <action selector="onGoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X1s-47-Ag2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -108,7 +108,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dzH-yM-V0P">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4So-Dg-WZm" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="4So-Dg-WZm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="JJO-H9-1Oj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -127,6 +127,9 @@
     <designables>
         <designable name="P8f-Dc-7HJ">
             <size key="intrinsicContentSize" width="62.5" height="45.5"/>
+        </designable>
+        <designable name="PMa-F9-Hcw">
+            <size key="intrinsicContentSize" width="165" height="32"/>
         </designable>
     </designables>
     <resources>

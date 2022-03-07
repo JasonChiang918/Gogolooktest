@@ -10,14 +10,22 @@ import UIKit
 // UICollectionViewDataSource
 extension TopInfoFilterViewCell: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return SectionCount
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.subtypes.count
+        if self.rowCount == nil {
+            rowCount = abs(self.viewModel.subtypes.count / SectionCount)
+        }
+        
+        return section == SectionCount-1 ? self.viewModel.subtypes.count - section * rowCount : rowCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as? TopInfoFilterViewLabelCell {
             
-            cell.wordLabel.text = self.viewModel.subtypes[indexPath.row]
+            cell.wordLabel.text = self.viewModel.subtypes[indexPath.section * rowCount + indexPath.row]
             
             // default select
             if indexPath.section == 0 && indexPath.row == 0 {

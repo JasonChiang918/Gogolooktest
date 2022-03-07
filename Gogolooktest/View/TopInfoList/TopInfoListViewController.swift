@@ -1,5 +1,5 @@
 //
-//  TopInfoListViewController.swift
+//  TopInfoListVC.swift
 //  Gogolooktest
 //
 //  Created by Chih-Yi Chiang on 2022/3/4.
@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class TopInfoListViewController: UIViewController {
-
+class TopInfoListVC: UIViewController {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     final let RowCount = 3.0
@@ -25,9 +25,9 @@ class TopInfoListViewController: UIViewController {
     var fetchingData = false
     var noMoreData = false
     
-    // 建立 TopInfoListViewController
-    static func instantiate(viewModel: TopInfoListViewModel) -> TopInfoListViewController {
-        let viewController = TopInfoListViewController()
+    // 建立 TopInfoListVC
+    static func instantiate(viewModel: TopInfoListViewModel) -> TopInfoListVC {
+        let viewController = TopInfoListVC()
         viewController.viewModel = viewModel
         
         return viewController

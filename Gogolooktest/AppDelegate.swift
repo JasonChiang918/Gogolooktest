@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let BarButtonItemAppearance = UIBarButtonItem.appearance()
         BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
         
+        let cache = ImageCache.default
+        
+        // Constrain Memory Cache to 300 MB
+        cache.memoryStorage.config.totalCostLimit = 1024 * 1024 * 300
+        
+        // Constrain Disk Cache to 500 MB
+        cache.diskStorage.config.sizeLimit = 1024 * 1024 * 500
+        
         return true
     }
 
@@ -32,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.

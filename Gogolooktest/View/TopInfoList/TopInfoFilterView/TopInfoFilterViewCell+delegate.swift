@@ -10,4 +10,14 @@ import UIKit
 // UICollectionViewDelegate
 extension TopInfoFilterViewCell: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedIdx = indexPath.section * rowCount + indexPath.row
+        
+        if selectedIdx == self.viewModel.subtypeIdx {
+            return
+        }
+        
+        self.viewModel.selectSubtype(idx: selectedIdx)
+    }
+    
 }

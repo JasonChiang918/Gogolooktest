@@ -6,29 +6,35 @@
 //
 
 import Foundation
+import RxSwift
 
 // 主畫面 view model
 final class MainViewModel: NSObject {
     
+    private let gglBoService = GGLBoService()
+    
     var type: MainType! = .Anime
     
-    private let gglBoService: GGLBoServiceProtocol
+    public let topInfos : PublishSubject<[TopInfo]> = PublishSubject()
+    public let loading: PublishSubject<Bool> = PublishSubject()
+    public let error : PublishSubject<GGLServiceError> = PublishSubject()
     
-    init(gglBoService: GGLBoServiceProtocol = GGLBoService()) {
-        self.gglBoService = gglBoService
-    }
-    
-    func fetchTopInfos(page: Int? = 0, subtype: String? = "", completionHandler: @escaping (_ topInfos: [TopInfo]?) -> Void) {
+    private let disposable = DisposeBag()
+     
+    public func fetchTopInfos() {
+        self.loading.onNext(true)
+        
         let mainType = type.rawValue.lowercased()
         
-        self.gglBoService.fetchGGLBoAPI(type: mainType, page: page!+1, subtype: subtype!) { error, responseData in
-            guard let _ = error, let _ = responseData else {
-                completionHandler(responseData)
-                
-                return
-            }
+        self.gglBoService.fetchGGLBoAPI(type: mainType, page: 0, subtype: "") { error, responseData in
+            self.loading.onNext(false)
             
-            completionHandler(nil)
+            if let error = error {
+                self.error.onNext(error)
+            }
+            else {
+                self.topInfos.onNext(responseData ?? [])
+            }
         }
     }
     

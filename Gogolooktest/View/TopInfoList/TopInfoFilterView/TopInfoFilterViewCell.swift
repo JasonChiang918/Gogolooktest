@@ -9,14 +9,22 @@ import UIKit
 
 class TopInfoFilterViewCell: UICollectionReusableView {
 
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var subtypeCollectionView: UICollectionView!
     
     final let CellIdentifier = "TopInfoFilterViewLabelCell"
+    final let SectionCount = 3
+    var rowCount: Int!
     
     var viewModel: TopInfoFilterViewModel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.bgView.layer.cornerRadius = 6.0
+        self.bgView.layer.borderWidth = 1.0
+        self.bgView.layer.borderColor = UIColor.black.cgColor
+        self.bgView.layer.masksToBounds = true
         
         self.subtypeCollectionView.register(UINib.init(nibName: "TopInfoFilterViewLabelCell", bundle: nil), forCellWithReuseIdentifier: CellIdentifier)
     }
