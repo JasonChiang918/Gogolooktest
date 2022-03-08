@@ -25,7 +25,11 @@ extension TopInfoListVC: UICollectionViewDataSource {
         let topInfos = self.viewModel.getCurrentTopInfoDic().topInfos
             
         if let topInfo = topInfos?[indexPath.row], let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as? TopInfoContentViewCell {
-            cell.viewModel = TopInfoContentViewModel(topInfo: topInfo)
+            cell.viewModel = TopInfoContentViewModel(type: self.viewModel.type, topInfo: topInfo)
+            cell.viewModel.updatingLike
+                .observe(on: MainScheduler.instance)
+                .bind(to: viewModel.updateLike)
+                .disposed(by: disposeBag)
             
             return cell
         }
@@ -57,6 +61,10 @@ extension TopInfoListVC: UICollectionViewDataSource {
                 filterView?.viewModel.selectSubtype
                     .observe(on: MainScheduler.instance)
                     .bind(to: viewModel.selectSubtype)
+                    .disposed(by: disposeBag)
+                filterView?.viewModel.selectSourcetype
+                    .observe(on: MainScheduler.instance)
+                    .bind(to: viewModel.selectSourcetype)
                     .disposed(by: disposeBag)
                 
                 return aHeaderView

@@ -45,20 +45,4 @@ class GGLServiceTest: XCTestCase {
         XCTAssertNotNil(boArray, "Get 0 topinfos.")
     }
     
-    func testGGLLikeService() {
-        let testMal_id = 1111123211111
-        
-        // add like
-        GGLLikeService.sharedInstance.addLike(mal_id: testMal_id)
-        let isAdded = GGLLikeService.sharedInstance.isLike(mal_id: testMal_id)
-        
-        XCTAssertTrue(isAdded, "Add like failure.")
-        
-        // delete like
-        GGLLikeService.sharedInstance.deleteLike(mal_id: testMal_id)
-        let isDeleted = !GGLLikeService.sharedInstance.isLike(mal_id: testMal_id)
-        
-        XCTAssertTrue(isDeleted, "Delete like failure.")
-    }
-    
 }

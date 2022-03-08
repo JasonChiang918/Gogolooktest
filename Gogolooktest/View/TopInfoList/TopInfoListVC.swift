@@ -21,6 +21,7 @@ class TopInfoListVC: UIViewController {
     
     var filterView: TopInfoFilterViewCell?
     var loadingView: TopInfoLoadingViewCell?
+    var subtypeViewHeight: CGFloat!
     
     var fetchingData = false
     
@@ -114,10 +115,11 @@ class TopInfoListVC: UIViewController {
         
         // bind select subtype
         viewModel.selectSubtype.subscribe(onNext: { subtype in
+            print("selected subtype:\(subtype)")
+            
             // record before content offset
             self.viewModel.getCurrentTopInfoDic().point = self.collectionView.contentOffset
             
-            print("selected subtype:\(subtype)")
             self.viewModel.subtypeString = subtype.lowercased()
             self.collectionView.reloadData()
             self.collectionView.setContentOffset(self.viewModel.getCurrentTopInfoDic().point, animated: false)
@@ -126,8 +128,39 @@ class TopInfoListVC: UIViewController {
                 self.getNextPage()
             }
             else {
-                self.loadingView?.loadingIndicatorView.isHidden = true
-                self.loadingView?.endLabel.isHidden = false
+                self.noMorePage()
+            }
+        }).disposed(by: disposeBag)
+        
+        // bind select sourcetype
+        viewModel.selectSourcetype.subscribe(onNext: { sourcetype in
+            print("selected sourcetype:\(sourcetype)")
+            
+            // record before content offset
+            self.viewModel.getCurrentTopInfoDic().point = self.collectionView.contentOffset
+             
+            self.viewModel.sourcetype = (.init(rawValue: sourcetype) ?? .ServerData)
+            self.collectionView.reloadData()
+            self.collectionView.setContentOffset(self.viewModel.getCurrentTopInfoDic().point, animated: false)
+            
+            if !self.viewModel.getCurrentTopInfoDic().noMoreData && self.viewModel.getCurrentTopInfoDic().topInfos.isEmpty {
+                self.getNextPage()
+            }
+            else if self.viewModel.sourcetype == .MyFavorite {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.noMorePage()
+                }
+            }
+            
+            // 只有 server data 可以選 subtype
+            self.refreshHeaderView()
+        }).disposed(by: disposeBag)
+        
+        // bind update like
+        viewModel.updateLike.subscribe(onNext: { isUpdating in
+            if !isUpdating && self.viewModel.sourcetype == .MyFavorite {
+                self.collectionView.reloadData()
+                self.collectionView.setContentOffset(.zero, animated: false)
             }
         }).disposed(by: disposeBag)
     }
@@ -142,10 +175,30 @@ class TopInfoListVC: UIViewController {
         self.viewModel.fetchNextTopInfos()
     }
     
-    private func noMorePage() {
+    func noMorePage() {
         self.viewModel.getCurrentTopInfoDic().noMoreData = true
         self.loadingView?.loadingIndicatorView.isHidden = true
         self.loadingView?.endLabel.isHidden = false
+    }
+    
+    private func refreshHeaderView() {
+        if self.subtypeViewHeight == nil {
+            self.subtypeViewHeight = filterView?.subtypeCollectionView.bounds.height
+        }
+        
+        if let subtypeViewHeight = subtypeViewHeight {
+            if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                var headerSize = layout.headerReferenceSize
+                if self.viewModel.sourcetype == .MyFavorite {
+                    headerSize.height -= subtypeViewHeight
+                }
+                else {
+                    headerSize.height += subtypeViewHeight
+                }
+                
+                layout.headerReferenceSize = headerSize
+            }
+        }
     }
     
 }

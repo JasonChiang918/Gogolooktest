@@ -11,10 +11,11 @@ class TopInfoFilterViewCell: UICollectionReusableView {
 
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var subtypeCollectionView: UICollectionView!
+    @IBOutlet weak var sourcetypeCollectionView: UICollectionView!
     
     final let CellIdentifier = "TopInfoFilterViewLabelCell"
-    final let SectionCount = 3
-    var rowCount: Int!
+    final let SubtypeSectionCount = 3
+    var subtypeRowCount: Int!
     
     var viewModel: TopInfoFilterViewModel!
     
@@ -27,6 +28,7 @@ class TopInfoFilterViewCell: UICollectionReusableView {
         self.bgView.layer.masksToBounds = true
         
         self.subtypeCollectionView.register(UINib.init(nibName: "TopInfoFilterViewLabelCell", bundle: nil), forCellWithReuseIdentifier: CellIdentifier)
+        self.sourcetypeCollectionView.register(UINib.init(nibName: "TopInfoFilterViewLabelCell", bundle: nil), forCellWithReuseIdentifier: CellIdentifier)
     }
     
 }

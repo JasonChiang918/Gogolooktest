@@ -12,6 +12,9 @@ import Kingfisher
 // TopInfo content view model
 final class TopInfoContentViewModel: NSObject {
     
+    var mainType: MainType!
+    var topInfo: TopInfo!
+    
     var mal_id: Int!
     var title: String!
     var type: String!
@@ -26,8 +29,11 @@ final class TopInfoContentViewModel: NSObject {
         super.init()
     }
     
-    init(topInfo: TopInfo) {
+    init(type: MainType, topInfo: TopInfo) {
         super.init()
+        
+        self.mainType = type
+        self.topInfo = topInfo
         
         self.fullFillValues(topInfo: topInfo)
     }
@@ -57,17 +63,17 @@ final class TopInfoContentViewModel: NSObject {
             self.imageResource = ImageResource(downloadURL: imageUrl, cacheKey: imageUrlString)
         }
         
-        self.isLike = GGLLikeService.sharedInstance.isLike(mal_id: topInfo.mal_id)
+        self.isLike = GGLLikeService.sharedInstance.isLike(type: self.mainType, mal_id: self.mal_id)
     }
     
     public func updateLike() {
         self.updatingLike.onNext(true)
         
         if self.isLike {
-            GGLLikeService.sharedInstance.deleteLike(mal_id: self.mal_id)
+            GGLLikeService.sharedInstance.deleteLike(type: self.mainType, mal_id: self.mal_id)
         }
         else {
-            GGLLikeService.sharedInstance.addLike(mal_id: self.mal_id)
+            GGLLikeService.sharedInstance.addLike(type: self.mainType, topInfo: self.topInfo)
         }
         
         self.isLike = !isLike

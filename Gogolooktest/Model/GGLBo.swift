@@ -19,7 +19,7 @@ struct GGLBo: Decodable {
 }
 
 // top 資訊
-struct TopInfo: Decodable {
+struct TopInfo: Decodable, Encodable {
     let mal_id: Int
     let rank: Int
     let title: String
@@ -71,4 +71,13 @@ enum MangaSubtype: String, CaseIterable {
         MangaSubtype.allCases.map { $0.rawValue }
     }
     
+}
+
+// source type 資訊
+enum SourceType: String, CaseIterable {
+    case ServerData, MyFavorite
+    
+    static var typeStrings: [String]! {
+        SourceType.allCases.map { $0.rawValue }
+    }
 }

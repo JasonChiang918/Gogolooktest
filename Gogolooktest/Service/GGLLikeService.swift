@@ -9,66 +9,135 @@ import Foundation
 
 // 控制 GGLLike 資訊協定
 protocol GGLLikeServiceProtocol {
-    func addLike(mal_id: Int) -> Void
-    func deleteLike(mal_id: Int) -> Void
-    func isLike(mal_id: Int) -> Bool
+    func addLike(type: MainType, topInfo: TopInfo) -> Void
+    func deleteLike(type: MainType, mal_id: Int) -> Void
+    func isLike(type: MainType, mal_id: Int) -> Bool
 }
 
 class GGLLikeService: NSObject, GGLLikeServiceProtocol {
     
     static let sharedInstance = GGLLikeService()
     
-    private static let STORE_KEY = "GGLLikes"
-    private static let storeUrl = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL).appendingPathComponent(STORE_KEY)
+    private static let ANIME_STORE_KEY = "GGLAnimeLikes"
+    private static let MANGA_STORE_KEY = "GGLMangaLikes"
+    private static let animeStoreUrl = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL).appendingPathComponent(ANIME_STORE_KEY)
+    private static let mangaStoreUrl = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL).appendingPathComponent(MANGA_STORE_KEY)
     
-    private var likes: [Int]!
+    private var animeLikes: [Int : TopInfo]!
+    private var mangaLikes: [Int : TopInfo]!
     
     private override init() {
         super.init()
         
+        // read anime
         do {
-            let data = try Data(contentsOf: GGLLikeService.storeUrl)
-            self.likes = try JSONDecoder().decode([Int].self, from: data)
+            let animeData = try Data(contentsOf: GGLLikeService.animeStoreUrl)
+            self.animeLikes = try JSONDecoder().decode([Int : TopInfo].self, from: animeData)
         }
         catch {
-            likes = [Int]()
-            self.refreshStoreLikes()
+            self.animeLikes = [Int : TopInfo]()
+            self.refreshStoreLikes(type: .Anime)
         }
-    }
-    
-    private func refreshStoreLikes() {
+        
+        // read manga
         do {
-            let data = try JSONEncoder().encode(self.likes)
-            try data.write(to: GGLLikeService.storeUrl)
-        } catch {
-            print("error:\(error)")
+            let mangaData = try Data(contentsOf: GGLLikeService.mangaStoreUrl)
+            self.mangaLikes = try JSONDecoder().decode([Int : TopInfo].self, from: mangaData)
+        }
+        catch {
+            self.mangaLikes = [Int : TopInfo]()
+            self.refreshStoreLikes(type: .Manga)
         }
     }
     
-    func addLike(mal_id: Int) {
-        if self.likes.contains(mal_id) {
-            return
+    private func refreshStoreLikes(type: MainType) {
+        switch type {
+        case .Anime:
+            do {
+                let animeData = try JSONEncoder().encode(self.animeLikes)
+                try animeData.write(to: GGLLikeService.animeStoreUrl)
+            } catch {
+                print("error:\(error)")
+            }
+        case .Manga:
+            do {
+                let mangaData = try JSONEncoder().encode(self.mangaLikes)
+                try mangaData.write(to: GGLLikeService.mangaStoreUrl)
+            } catch {
+                print("error:\(error)")
+            }
         }
         
-        self.likes.append(mal_id)
-        self.refreshStoreLikes()
     }
     
-    func deleteLike(mal_id: Int) {
-        guard let idx = self.likes.firstIndex(of: mal_id) else {
-            return
+    func addLike(type: MainType, topInfo: TopInfo) {
+        let mal_id = topInfo.mal_id
+        
+        switch type {
+        case .Anime:
+            if self.animeLikes.keys.contains(mal_id) {
+                return
+            }
+            self.animeLikes[mal_id] = topInfo
+            
+        case .Manga:
+            if self.mangaLikes.keys.contains(mal_id) {
+                return
+            }
+            self.mangaLikes[mal_id] = topInfo
         }
         
-        self.likes.remove(at: idx)
-        self.refreshStoreLikes()
+        
+        self.refreshStoreLikes(type: type)
     }
     
-    func isLike(mal_id: Int) -> Bool {
-        if self.likes.isEmpty {
-            return false
+    func deleteLike(type: MainType, mal_id: Int) {
+        switch type {
+        case .Anime:
+            guard let idx = self.animeLikes.keys.firstIndex(of: mal_id) else {
+                return
+            }
+            self.animeLikes.remove(at: idx)
+            
+        case .Manga:
+            guard let idx = self.mangaLikes.keys.firstIndex(of: mal_id) else {
+                return
+            }
+            self.mangaLikes.remove(at: idx)
         }
         
-        return self.likes.contains(mal_id)
+        self.refreshStoreLikes(type: type)
+    }
+    
+    func isLike(type: MainType, mal_id: Int) -> Bool {
+        switch type {
+        case .Anime:
+            if self.animeLikes.isEmpty {
+                return false
+            }
+            return self.animeLikes.keys.contains(mal_id)
+            
+        case .Manga:
+            if self.mangaLikes.isEmpty {
+                return false
+            }
+            return self.mangaLikes.keys.contains(mal_id)
+            
+        }
+    }
+    
+    func genTopInfosToDic(type: MainType) -> TopInfoDic {
+        var topInfos: [TopInfo]!
+        
+        switch type {
+        case .Anime:
+            topInfos = Array(self.animeLikes.values)
+            
+        case .Manga:
+            topInfos = Array(self.mangaLikes.values)
+        }
+        
+        return TopInfoDic(pageIdx: 0, topInfos: topInfos, noMoreData: true)
     }
     
 }

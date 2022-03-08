@@ -9,6 +9,19 @@ import Foundation
 import RxSwift
 import UIKit
 
+public class TopInfoDic {
+    var pageIdx: Int!
+    var topInfos: [TopInfo]!
+    var noMoreData = false
+    var point: CGPoint! = .zero
+    
+    init(pageIdx: Int, topInfos: [TopInfo], noMoreData: Bool? = false) {
+        self.pageIdx = pageIdx
+        self.topInfos = topInfos
+        self.noMoreData = noMoreData!
+    }
+}
+
 // TopInfo list view model
 final class TopInfoListViewModel: NSObject {
     
@@ -20,20 +33,10 @@ final class TopInfoListViewModel: NSObject {
     var subTypes: [String]! {
         return self.type == .Anime ? AnimeSubtype.typeStrings : MangaSubtype.typeStrings
     }
+    var sourcetype: SourceType = .ServerData
+    
     // Dic: [subtype : TopInfoDic]
     var filteredTopInfos: [String : TopInfoDic]!
-    
-    public class TopInfoDic {
-        var pageIdx: Int!
-        var topInfos: [TopInfo]!
-        var noMoreData = false
-        var point: CGPoint! = .zero
-        
-        init(pageIdx: Int, topInfos: [TopInfo]) {
-            self.pageIdx = pageIdx
-            self.topInfos = topInfos
-        }
-    }
     
     // fetch new data
     public let hasNextPage : PublishSubject<Bool> = PublishSubject()
@@ -41,6 +44,10 @@ final class TopInfoListViewModel: NSObject {
     public let error : PublishSubject<GGLServiceError> = PublishSubject()
     // select subtype
     public let selectSubtype : PublishSubject<String> = PublishSubject()
+    // select sourcetype
+    public let selectSourcetype : PublishSubject<String> = PublishSubject()
+    // update like
+    public let updateLike : PublishSubject<Bool> = PublishSubject()
     
     override private init() {
         super.init()
@@ -63,7 +70,12 @@ final class TopInfoListViewModel: NSObject {
     }
     
     func getCurrentTopInfoDic() -> TopInfoDic {
-        return filteredTopInfos[subtypeString]!
+        switch self.sourcetype {
+        case .ServerData:
+            return filteredTopInfos[subtypeString]!
+        case .MyFavorite:
+            return GGLLikeService.sharedInstance.genTopInfosToDic(type: self.type)
+        }
     }
     
     private func addNewTopInfoToCurrentTopInfoDic(topInfos: [TopInfo]) {
