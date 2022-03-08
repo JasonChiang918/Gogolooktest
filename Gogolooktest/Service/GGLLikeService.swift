@@ -14,29 +14,35 @@ protocol GGLLikeServiceProtocol {
     func isLike(mal_id: Int) -> Bool
 }
 
-// 儲存資料單純，故使用UserDefaults
 class GGLLikeService: NSObject, GGLLikeServiceProtocol {
     
     static let sharedInstance = GGLLikeService()
     
-    private final let STORE_KEY = "GGLLikes"
+    private static let STORE_KEY = "GGLLikes"
+    private static let storeUrl = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL).appendingPathComponent(STORE_KEY)
     
     private var likes: [Int]!
     
     private override init() {
         super.init()
         
-        if let storeLikes = UserDefaults.standard.value(forKey: STORE_KEY) as? [Int] {
-            likes = storeLikes
+        do {
+            let data = try Data(contentsOf: GGLLikeService.storeUrl)
+            self.likes = try JSONDecoder().decode([Int].self, from: data)
         }
-        else {
+        catch {
             likes = [Int]()
             self.refreshStoreLikes()
         }
     }
     
     private func refreshStoreLikes() {
-        UserDefaults.standard.set(likes, forKey: STORE_KEY)
+        do {
+            let data = try JSONEncoder().encode(self.likes)
+            try data.write(to: GGLLikeService.storeUrl)
+        } catch {
+            print("error:\(error)")
+        }
     }
     
     func addLike(mal_id: Int) {

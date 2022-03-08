@@ -15,7 +15,6 @@
 		1C62E17A27CF444000F8CEC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C62E17927CF444000F8CEC4 /* Assets.xcassets */; };
 		1C62E17D27CF444000F8CEC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C62E17B27CF444000F8CEC4 /* LaunchScreen.storyboard */; };
 		1C62E19227CF444000F8CEC4 /* GogolooktestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */; };
-		1C62E19427CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */; };
 		1C9DF62F27D49982007BEEE8 /* TopInfoListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C9DF62D27D49982007BEEE8 /* TopInfoListVC.xib */; };
 		1C9DF63127D4F907007BEEE8 /* TopInfoContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DF63027D4F907007BEEE8 /* TopInfoContentViewModel.swift */; };
 		1CB3BBEC27D0A7B000B3F529 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3BBEB27D0A7B000B3F529 /* MainViewModel.swift */; };
@@ -80,7 +79,6 @@
 		1C62E18327CF444000F8CEC4 /* GogolooktestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogolooktestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C62E18D27CF444000F8CEC4 /* GogolooktestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GogolooktestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestUITests.swift; sourceTree = "<group>"; };
-		1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GogolooktestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1C9DF62D27D49982007BEEE8 /* TopInfoListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopInfoListVC.xib; sourceTree = "<group>"; };
 		1C9DF63027D4F907007BEEE8 /* TopInfoContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoContentViewModel.swift; sourceTree = "<group>"; };
 		1CB3BBEB27D0A7B000B3F529 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				1C62E19127CF444000F8CEC4 /* GogolooktestUITests.swift */,
-				1C62E19327CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift */,
 			);
 			path = GogolooktestUITests;
 			sourceTree = "<group>";
@@ -671,7 +668,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C62E19227CF444000F8CEC4 /* GogolooktestUITests.swift in Sources */,
-				1C62E19427CF444000F8CEC4 /* GogolooktestUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
