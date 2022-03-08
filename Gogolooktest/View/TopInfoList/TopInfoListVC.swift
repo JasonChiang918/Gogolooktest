@@ -147,9 +147,7 @@ class TopInfoListVC: UIViewController {
                 self.getNextPage()
             }
             else if self.viewModel.sourcetype == .MyFavorite {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.noMorePage()
-                }
+                self.noMorePage()
             }
             
             // 只有 server data 可以選 subtype
