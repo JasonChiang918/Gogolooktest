@@ -25,16 +25,19 @@ class GogolooktestUITests: XCTestCase {
         
         app.buttons["GoButton"].tap()
         
-        let verticalScrollBar7PagesCollectionViewsQuery = app.collectionViews.containing(.other, identifier:"Vertical scroll bar, 7 pages")
-        verticalScrollBar7PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 0)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let verticalScrollBar8PagesCollectionViewsQuery = app.collectionViews.containing(.other, identifier:"Vertical scroll bar, 8 pages")
+        let likebuttonButton = verticalScrollBar8PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 0)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        likebuttonButton.tap()
         sleep(1)
-        verticalScrollBar7PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 1)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        verticalScrollBar8PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 1)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         sleep(1)
-        verticalScrollBar7PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 2)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        verticalScrollBar8PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 2)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         sleep(1)
-        verticalScrollBar7PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 3)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        verticalScrollBar8PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 3)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         sleep(1)
-        verticalScrollBar7PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 4)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        verticalScrollBar8PagesCollectionViewsQuery.children(matching: .cell).element(boundBy: 5)/*@START_MENU_TOKEN@*/.buttons["LikeButton"]/*[[".buttons[\"love\"]",".buttons[\"LikeButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        likebuttonButton.tap()
+        
     }
     
     func testDetail() {
@@ -43,7 +46,7 @@ class GogolooktestUITests: XCTestCase {
         
         app.buttons["GoButton"].tap()
         
-        app.collectionViews.containing(.other, identifier:"Vertical scroll bar, 7 pages").children(matching: .cell).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.tap()
+        app.collectionViews.containing(.other, identifier:"Vertical scroll bar, 8 pages").children(matching: .cell).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.tap()
     }
     
     func testSubType() {
