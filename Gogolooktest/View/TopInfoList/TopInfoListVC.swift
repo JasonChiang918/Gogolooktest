@@ -87,6 +87,7 @@ class TopInfoListVC: UIViewController {
             case .Response404Error(_):
                 print("No more page.")
                 self.noMorePage()
+                self.viewModel.getCurrentTopInfoDic().noMoreData = true
                 self.collectionView.reloadData()
                 self.fetchingData = false
             
@@ -105,6 +106,7 @@ class TopInfoListVC: UIViewController {
         viewModel.hasNextPage.subscribe(onNext: { hasNextPage in
             DispatchQueue.main.async {
                 if !hasNextPage {
+                    self.viewModel.getCurrentTopInfoDic().noMoreData = true
                     self.noMorePage()
                 }
                 
@@ -174,7 +176,6 @@ class TopInfoListVC: UIViewController {
     }
     
     func noMorePage() {
-        self.viewModel.getCurrentTopInfoDic().noMoreData = true
         self.loadingView?.loadingIndicatorView.isHidden = true
         self.loadingView?.endLabel.isHidden = false
     }
