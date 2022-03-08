@@ -24,7 +24,6 @@ class GGLLikeService: NSObject, GGLLikeServiceProtocol {
     private var likes: [Int]!
     
     private override init() {
-        print("init...")
         super.init()
         
         if let storeLikes = UserDefaults.standard.value(forKey: STORE_KEY) as? [Int] {
@@ -34,10 +33,6 @@ class GGLLikeService: NSObject, GGLLikeServiceProtocol {
             likes = [Int]()
             self.refreshStoreLikes()
         }
-    }
-    
-    deinit {
-        print("deinit...")
     }
     
     private func refreshStoreLikes() {

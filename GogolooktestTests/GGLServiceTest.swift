@@ -6,10 +6,11 @@
 //
 
 import XCTest
+@testable import Gogolooktest
 
 class GGLServiceTest: XCTestCase {
 
-    var gglBoService: GGLBoService!
+    var gglBoService: GGLBoServiceProtocol!
     
     override func setUp() {
         super.setUp()
@@ -22,12 +23,16 @@ class GGLServiceTest: XCTestCase {
     }
     
     func testFetchGGLBosAPI() {
-        var responseError: Error?
+        var responseError: GGLServiceError?
+        var boArray: [TopInfo]?
         let promise = expectation(description: "No ggl bo.")
         
-        gglBoService.fetchGGLBoAPI(page: 1, subtype: "tv") { error, bo in
+        gglBoService.fetchGGLBoAPI(type: MainType.Anime.rawValue.lowercased(), page: 1, subtype: AnimeSubtype.tv.rawValue) { error, bo in
             if let error = error {
                 responseError = error
+            }
+            else {
+                boArray = bo
             }
             
             promise.fulfill()
@@ -36,8 +41,24 @@ class GGLServiceTest: XCTestCase {
         wait(for: [promise], timeout: 5)
         
         XCTAssertNil(responseError, "Response is error.")
+        
+        XCTAssertNotNil(boArray, "Get 0 topinfos.")
     }
     
-    
+    func testGGLLikeService() {
+        let testMal_id = 1111123211111
+        
+        // add like
+        GGLLikeService.sharedInstance.addLike(mal_id: testMal_id)
+        let isAdded = GGLLikeService.sharedInstance.isLike(mal_id: testMal_id)
+        
+        XCTAssertTrue(isAdded, "Add like failure.")
+        
+        // delete like
+        GGLLikeService.sharedInstance.deleteLike(mal_id: testMal_id)
+        let isDeleted = !GGLLikeService.sharedInstance.isLike(mal_id: testMal_id)
+        
+        XCTAssertTrue(isDeleted, "Delete like failure.")
+    }
     
 }

@@ -9,9 +9,7 @@ target 'Gogolooktest' do
   pod 'RxSwift', '6.2.0'
   pod 'RxCocoa', '6.2.0'
   pod 'Moya', '~> 15.0'
-  pod 'SnapKit', '~> 5.0.0'
   pod 'Kingfisher', '~> 7.0'
-  pod 'BetterSegmentedControl', '~> 2.0'
   pod 'MHLoadingButton'
 
   target 'GogolooktestTests' do

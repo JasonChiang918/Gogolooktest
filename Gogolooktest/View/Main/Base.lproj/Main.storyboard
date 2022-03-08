@@ -25,46 +25,24 @@
                                 <color key="textColor" red="0.36078431370000003" green="0.77647058820000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibh-sc-J9U">
-                                <rect key="frame" x="20" y="70" width="374" height="80"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMa-F9-Hcw" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                        <rect key="frame" x="10" y="10" width="354" height="60"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBackgroundColor">
-                                                <color key="value" systemColor="systemIndigoColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="indicatorViewInset">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorViewBorderColor">
-                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="segmentPadding">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="onTypeControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="JKm-BC-8lH"/>
-                                        </connections>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nwI-Hy-ZU0">
+                                <rect key="frame" x="57" y="80" width="300" height="71"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="PMa-F9-Hcw" secondAttribute="trailing" constant="10" id="VWx-tm-6sM"/>
-                                    <constraint firstItem="PMa-F9-Hcw" firstAttribute="top" secondItem="Ibh-sc-J9U" secondAttribute="top" constant="10" id="boY-cf-cmG"/>
-                                    <constraint firstAttribute="bottom" secondItem="PMa-F9-Hcw" secondAttribute="bottom" constant="10" id="jph-K6-8NF"/>
-                                    <constraint firstAttribute="height" constant="80" id="kJV-UN-NkB"/>
-                                    <constraint firstItem="PMa-F9-Hcw" firstAttribute="leading" secondItem="Ibh-sc-J9U" secondAttribute="leading" constant="10" id="kmW-fU-NvC"/>
+                                    <constraint firstAttribute="height" constant="70" id="2gf-Gc-9T0"/>
+                                    <constraint firstAttribute="width" constant="300" id="p9v-rf-nma"/>
                                 </constraints>
-                            </view>
+                                <segments>
+                                    <segment title="Anime"/>
+                                    <segment title="Manga"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemTealColor"/>
+                                <connections>
+                                    <action selector="onTypeControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="YTc-TV-xku"/>
+                                </connections>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8f-Dc-7HJ" customClass="LoadingButton" customModule="MHLoadingButton">
-                                <rect key="frame" x="82" y="200" width="250" height="60"/>
+                                <rect key="frame" x="82" y="220" width="250" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="CIe-Zo-5Bh"/>
                                     <constraint firstAttribute="height" constant="60" id="NSb-sm-rdS"/>
@@ -86,19 +64,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ibh-sc-J9U" secondAttribute="trailing" constant="20" id="5id-52-k7Q"/>
                             <constraint firstItem="Jdl-Tx-QBt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="912-Rm-2gq"/>
-                            <constraint firstItem="Ibh-sc-J9U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tzd-Lx-q4f"/>
+                            <constraint firstItem="nwI-Hy-ZU0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PXr-AR-JTN"/>
                             <constraint firstItem="P8f-Dc-7HJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z5F-RQ-8GD"/>
                             <constraint firstItem="Jdl-Tx-QBt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bZO-2K-JGA"/>
-                            <constraint firstItem="P8f-Dc-7HJ" firstAttribute="top" secondItem="Ibh-sc-J9U" secondAttribute="bottom" constant="50" id="iXo-2O-sOP"/>
-                            <constraint firstItem="Ibh-sc-J9U" firstAttribute="top" secondItem="Jdl-Tx-QBt" secondAttribute="bottom" constant="10" id="ibc-Fi-KdW"/>
+                            <constraint firstItem="nwI-Hy-ZU0" firstAttribute="top" secondItem="Jdl-Tx-QBt" secondAttribute="bottom" constant="20" id="j8j-ZS-kXY"/>
+                            <constraint firstItem="P8f-Dc-7HJ" firstAttribute="top" secondItem="nwI-Hy-ZU0" secondAttribute="bottom" constant="70" id="qc4-az-yBl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vFz-VA-cEX"/>
                     <connections>
                         <outlet property="goButton" destination="P8f-Dc-7HJ" id="olu-VF-Ttn"/>
-                        <outlet property="typeControl" destination="PMa-F9-Hcw" id="TxD-Aj-8eH"/>
+                        <outlet property="typeControl" destination="nwI-Hy-ZU0" id="G6L-H1-cgf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -128,16 +105,16 @@
         <designable name="P8f-Dc-7HJ">
             <size key="intrinsicContentSize" width="62.5" height="45.5"/>
         </designable>
-        <designable name="PMa-F9-Hcw">
-            <size key="intrinsicContentSize" width="165" height="32"/>
-        </designable>
     </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

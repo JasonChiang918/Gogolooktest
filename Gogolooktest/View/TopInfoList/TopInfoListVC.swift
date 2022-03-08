@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import SnapKit
 import Kingfisher
 
 class TopInfoListVC: UIViewController {

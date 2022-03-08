@@ -8,13 +8,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import BetterSegmentedControl
 import MHLoadingButton
 
 // 主畫面
 class MainVC: UIViewController {
 
-    @IBOutlet weak var typeControl: BetterSegmentedControl!
+    @IBOutlet weak var typeControl: UISegmentedControl!
     @IBOutlet weak var goButton: LoadingButton!
     
     var viewModel = MainViewModel()
@@ -32,7 +31,9 @@ class MainVC: UIViewController {
         self.title = "GoGoLook Test"
         
         // init type control
-        self.typeControl.segments = LabelSegment.segments(withTitles: MainType.typeStrings, normalFont: .systemFont(ofSize: 24), normalTextColor: .systemGray, selectedFont: .systemFont(ofSize: 24), selectedTextColor: .white)
+        self.typeControl.layer.cornerRadius = 5.0
+        self.typeControl.setTitleTextAttributes([.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 30)], for: .selected)
+        self.typeControl.setTitleTextAttributes([.foregroundColor: UIColor.lightGray, .font: UIFont.systemFont(ofSize: 30)], for: .normal)
         
         // init go button
         self.goButton.indicator = BallPulseSyncIndicator(color: .white)
@@ -63,10 +64,10 @@ class MainVC: UIViewController {
     }
     
     // choose type
-    @IBAction func onTypeControlChanged(_ sender: BetterSegmentedControl) {
-        print("type:\(sender.index)")
+    @IBAction func onTypeControlChanged(_ sender: UISegmentedControl) {
+        print("type:\(sender.selectedSegmentIndex)")
         
-        self.viewModel.type = .init(idx: sender.index)
+        self.viewModel.type = .init(idx: sender.selectedSegmentIndex)
     }
     
     // go button action
