@@ -64,7 +64,7 @@ class TopInfoListVC: UIViewController {
         // bind loading
         viewModel.loading.subscribe(onNext: { isLoading in
             self.fetchingData = isLoading
-            self.filterView?.subtypeCollectionView.isUserInteractionEnabled = !isLoading
+            self.filterView?.isUserInteractionEnabled = !isLoading
         
             self.loadingView?.loadingIndicatorView.isHidden = false
             self.loadingView?.endLabel.isHidden = true
