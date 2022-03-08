@@ -43,6 +43,7 @@
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8f-Dc-7HJ" customClass="LoadingButton" customModule="MHLoadingButton">
                                 <rect key="frame" x="82" y="220" width="250" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="GoButton"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="CIe-Zo-5Bh"/>
                                     <constraint firstAttribute="height" constant="60" id="NSb-sm-rdS"/>

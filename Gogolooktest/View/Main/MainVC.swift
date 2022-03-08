@@ -32,8 +32,8 @@ class MainVC: UIViewController {
         
         // init type control
         self.typeControl.layer.cornerRadius = 5.0
-        self.typeControl.setTitleTextAttributes([.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 30)], for: .selected)
-        self.typeControl.setTitleTextAttributes([.foregroundColor: UIColor.lightGray, .font: UIFont.systemFont(ofSize: 30)], for: .normal)
+        self.typeControl.setTitleTextAttributes([.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 26)], for: .selected)
+        self.typeControl.setTitleTextAttributes([.foregroundColor: UIColor.lightGray, .font: UIFont.systemFont(ofSize: 26)], for: .normal)
         
         // init go button
         self.goButton.indicator = BallPulseSyncIndicator(color: .white)

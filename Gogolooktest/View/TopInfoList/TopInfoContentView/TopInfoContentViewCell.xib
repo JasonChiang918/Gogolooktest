@@ -112,6 +112,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-GE-eXX">
                                                 <rect key="frame" x="151" y="0.0" width="45" height="45"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="LikeButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8cE-GE-eXX" secondAttribute="height" multiplier="1:1" id="DhO-Qj-qhw"/>
                                                 </constraints>
